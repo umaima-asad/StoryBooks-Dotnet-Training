@@ -1,4 +1,4 @@
-@StoryBooks_HostAddress = https://localhost:7175
+@StoryBooks_HostAddress = http://localhost:5097
 
 GET {{StoryBooks_HostAddress}}/weatherforecast/
 Accept: application/json
@@ -7,5 +7,21 @@ Accept: application/json
 
 @search_word=string
 GET {{StoryBooks_HostAddress}}/api/storybook/search?search_word={{search_word}}
+
+###
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1QGdtYWlsLmNvbSIsInVpZCI6ImJmMDZkOGI0LTA1YmEtNGZjMC04MjRlLTcxMzdiNjg1ZDllZiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJtZW1lIiwiZXhwIjoxNzU5NDE1NjkwLCJpc3MiOiJTdG9yeUJvb2tzIiwiYXVkIjoiU3RvcnlCb29rc1VzZXJzIn0.QYbfqtersGx2xJOpWM-GqxbM-ISYRjm2k835j_X90Uk
+GET {{StoryBooks_HostAddress}}/api/storybook/ping
+Authorization: Bearer {{token}}
+
+###
+
+POST {{StoryBooks_HostAddress}}/auth/login
+Authorization:Bearer {{token}}
+Content-Type: application/json
+
+{
+  "email": "u@gmail.com",
+  "password": "123Umaima!"
+}
 
 ###

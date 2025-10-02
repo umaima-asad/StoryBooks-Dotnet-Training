@@ -38,6 +38,13 @@ namespace StoryBooks.Controllers
             return Ok(storyBook);
         }
         [Authorize]
+        [HttpGet("ping")]
+        public IActionResult Ping()
+        {
+            return Ok("pong 🏓");
+        }
+
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<StoryBookDTO>> CreateStoryBook(CreateStoryBookDTO storyBookDto)
         {

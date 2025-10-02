@@ -25,16 +25,18 @@ builder.Services.AddSwaggerGen(c =>
         Version = "v1"
     });
 
+    // Define JWT Bearer scheme
     c.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
     {
         Name = "Authorization",
-        Type = Microsoft.OpenApi.Models.SecuritySchemeType.ApiKey,
-        Scheme = "Bearer",
+        Type = Microsoft.OpenApi.Models.SecuritySchemeType.Http, // Important: Http not ApiKey
+        Scheme = "bearer", // must be lowercase
         BearerFormat = "JWT",
         In = Microsoft.OpenApi.Models.ParameterLocation.Header,
-        Description = "Enter 'Bearer' followed by your JWT token.\n\nExample: Bearer eyJhbGciOiJIUzI1NiIsInR..."
+        Description = "Enter JWT token only (no 'Bearer ' prefix)"
     });
 
+    // Apply JWT globally to all endpoints
     c.AddSecurityRequirement(new Microsoft.OpenApi.Models.OpenApiSecurityRequirement
     {
         {
@@ -46,7 +48,7 @@ builder.Services.AddSwaggerGen(c =>
                     Id = "Bearer"
                 }
             },
-            new string[] {}
+            Array.Empty<string>()
         }
     });
 });
@@ -60,12 +62,9 @@ builder.Services.AddIdentity<UsersModel, IdentityRole>()
 
 var jwtKey = builder.Configuration["Jwt:Key"];
 var jwtIssuer = builder.Configuration["Jwt:Issuer"];
+var jwtAudience = builder.Configuration["Jwt:Audience"];
 
-builder.Services.AddAuthentication(options =>
-{
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-})
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 .AddJwtBearer(options =>
 {
     options.TokenValidationParameters = new TokenValidationParameters
@@ -74,8 +73,8 @@ builder.Services.AddAuthentication(options =>
         ValidateAudience = true,
         ValidateLifetime = true,
         ValidateIssuerSigningKey = true,
-        ValidIssuer = jwtIssuer,
-        ValidAudience = jwtIssuer,
+        //ValidIssuer = jwtIssuer,
+        //ValidAudience = jwtAudience,
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey))
     };
 });
@@ -83,6 +82,7 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddAuthorization();
 
 builder.Services.AddScoped<IStoryBookServices, StoryBookService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IValidator<StoryBookDTO>, StoryBookDTOValidator>();
 builder.Services.AddScoped<IValidator<CreateStoryBookDTO>, CreateStoryBookDTOValidator>();
 var app = builder.Build();
@@ -98,7 +98,7 @@ app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 
-app.UseAuthentication();
+app.UseAuthentication(); 
 app.UseAuthorization();
 
 app.MapControllers();
