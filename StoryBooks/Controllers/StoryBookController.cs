@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using StoryBooks.DTOs;  
@@ -36,7 +37,7 @@ namespace StoryBooks.Controllers
 
             return Ok(storyBook);
         }
-
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<StoryBookDTO>> CreateStoryBook(CreateStoryBookDTO storyBookDto)
         {
