@@ -1,0 +1,11 @@
+@StoryBooks_HostAddress = https://localhost:7175
+
+GET {{StoryBooks_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+@search_word=string
+GET {{StoryBooks_HostAddress}}/api/storybook/search?search_word={{search_word}}
+
+###
