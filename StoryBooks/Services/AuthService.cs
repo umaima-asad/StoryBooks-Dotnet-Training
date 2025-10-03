@@ -43,9 +43,9 @@ namespace StoryBooks.Services
         {
             var claims = new List<Claim>
         {
-            new Claim(JwtRegisteredClaimNames.Sub, user.Email),
+            new Claim(JwtRegisteredClaimNames.Sub, user.Email!),
             new Claim("uid", user.Id.ToString()),
-            new Claim(ClaimTypes.Name, user.Fullname ?? user.Email)
+            new Claim(ClaimTypes.Name, user.Fullname!)
         };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetValue<string>("AppSettings:Token")!));

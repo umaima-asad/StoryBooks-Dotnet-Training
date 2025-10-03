@@ -12,6 +12,7 @@ using StoryBooks.Models;
 using StoryBooks.Services;
 using System;
 using System.Text;
+IdentityModelEventSource.ShowPII = true;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -60,7 +61,7 @@ builder.Services.AddIdentity<UsersModel, IdentityRole>()
         .AddEntityFrameworkStores<StoryBookContext>();
       //  .AddDefaultTokenProviders();
 
-IdentityModelEventSource.ShowPII = true;
+
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 .AddJwtBearer(options =>

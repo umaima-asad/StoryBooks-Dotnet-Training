@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using StoryBooks.DTOs;  
 using StoryBooks.Services;
+using System.IdentityModel.Tokens.Jwt;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 namespace StoryBooks.Controllers
 {
@@ -21,7 +22,21 @@ namespace StoryBooks.Controllers
             _validator = validator;
             _createValidator = createValidator;
         }
-
+        [HttpGet("test-token")]
+        public IActionResult TestToken([FromHeader] string Authorization)
+        {
+            try
+            {
+                var token = Authorization.Replace("Bearer ", "");
+                var handler = new JwtSecurityTokenHandler();
+                var jwtToken = handler.ReadJwtToken(token);  // This should fail here if dependency issue
+                return Ok(jwtToken.Claims);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
         [HttpGet]
         public async Task<ActionResult<IEnumerable<StoryBookDTO>>> GetStoryBooks(int pageSize = 5, int pageNumber=1)
         {
