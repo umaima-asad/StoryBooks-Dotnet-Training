@@ -44,7 +44,7 @@ namespace StoryBooks.Services
             var claims = new List<Claim>
         {
             new Claim(JwtRegisteredClaimNames.Sub, user.Email),
-            new Claim("uid", user.Id),
+            new Claim("uid", user.Id.ToString()),
             new Claim(ClaimTypes.Name, user.Fullname ?? user.Email)
         };
 

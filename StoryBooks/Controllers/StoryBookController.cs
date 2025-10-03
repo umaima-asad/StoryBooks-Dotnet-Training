@@ -37,15 +37,17 @@ namespace StoryBooks.Controllers
 
             return Ok(storyBook);
         }
-        [Authorize]
+
+        [Authorize(AuthenticationSchemes = "Bearer")]
         [HttpGet("ping")]
         public IActionResult Ping()
         {
             return Ok("pong 🏓");
         }
 
-        [Authorize]
+       
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult<StoryBookDTO>> CreateStoryBook(CreateStoryBookDTO storyBookDto)
         {
             bool exists = await _service.StoryBookExistsAsync(storyBookDto);

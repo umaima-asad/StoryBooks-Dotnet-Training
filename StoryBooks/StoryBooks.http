@@ -20,8 +20,54 @@ Authorization:Bearer {{token}}
 Content-Type: application/json
 
 {
-  "email": "u@gmail.com",
+  "email": "umaima@gmail.com",
   "password": "123Umaima!"
 }
+
+###
+
+POST {{StoryBooks_HostAddress}}/api/auth/register
+Authorization: bearer {{$bearerToken}}
+Content-Type: application/json
+
+{
+  //RegisterDto
+}
+
+###
+
+POST {{StoryBooks_HostAddress}}/api/auth/login
+Authorization: bearer {{$bearerToken}}
+Content-Type: application/json
+
+{
+  "email": "umaima@gmail.com",
+  "password": "123Umaima!"
+}
+
+###
+
+GET {{StoryBooks_HostAddress}}/api/storybook/ping
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1bWFpbWFAZ21haWwuY29tIiwidWlkIjoiYjc3OWE2YzMtMjg1MC00MmYxLWEzYzUtNDhmMjcyMTg3YTY3IiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZSI6IlVtYWltIEFzYWQiLCJleHAiOjE3NTk0ODUxNTMsImlzcyI6IlN0b3J5Qm9va3MiLCJhdWQiOiJTdG9yeUJvb2tzVXNlcnMifQ.oEsIVSzo9F5nyOhZyLsrB_oPTEDLXGUvrol2u319s50
+###
+
+POST {{StoryBooks_HostAddress}}/api/storybook
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1bWFpbWFAZ21haWwuY29tIiwidWlkIjoiYjc3OWE2YzMtMjg1MC00MmYxLWEzYzUtNDhmMjcyMTg3YTY3IiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZSI6IlVtYWltIEFzYWQiLCJleHAiOjE3NTk0ODIxMzAsImlzcyI6IlN0b3J5Qm9va3MiLCJhdWQiOiJTdG9yeUJvb2tzVXNlcnMifQ.Xc3wweCuaO4Ql0YWGcxsfh1GeaoeWGZI3OPGhefLw-E
+Content-Type: application/json
+
+{
+  //CreateStoryBookDTO
+}
+
+###
+
+@id=0
+GET {{StoryBooks_HostAddress}}/api/storybook/{{id}}
+Authorization: bearer {{$bearerToken}}
+
+###
+
+GET {{StoryBooks_HostAddress}}/api/storybook/{{id}}
+Authorization: bearer {{$bearerToken}}
 
 ###
