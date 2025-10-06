@@ -88,6 +88,7 @@ namespace StoryBooks.Controllers
             return CreatedAtAction(nameof(GetStoryBook), new { id = created.BookName }, created);
         }
         [Authorize(Roles = "Librarian")]
+        [Authorize(Policy = "CanEditWithoutCover")]
         [HttpPut("{id}")]
         public async Task<ActionResult<StoryBookDTO>> UpdateStoryBook(int id, CreateStoryBookDTO storyBookDto)
         {

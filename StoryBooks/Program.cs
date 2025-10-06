@@ -1,5 +1,6 @@
 using FluentValidation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using Microsoft.OpenApi.Models;
 using StoryBooks.Data;
 using StoryBooks.DTOs;
 using StoryBooks.Models;
+using StoryBooks.Requirements;
 using StoryBooks.Services;
 using Swashbuckle.AspNetCore.Filters;
 using System;
@@ -54,10 +56,14 @@ public class Program
             .AddEntityFrameworkStores<StoryBookContext>();
 
 
-        builder.Services.AddAuthorization();
+        builder.Services.AddAuthorization(options =>
+        {
+            options.AddPolicy("CanEditWithoutCover", policy =>
+                policy.Requirements.Add(new CanEditNullCoverImageRequirement()));
+        });
 
         builder.Services.AddScoped<IStoryBookServices, StoryBookService>();
-        //builder.Services.AddScoped<IAuthService, AuthService>();
+        builder.Services.AddScoped<IAuthorizationHandler, CanEditNullCoverImageHandler>();
         builder.Services.AddScoped<IValidator<StoryBookDTO>, StoryBookDTOValidator>();
         builder.Services.AddScoped<IValidator<CreateStoryBookDTO>, CreateStoryBookDTOValidator>();
 
