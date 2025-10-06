@@ -22,21 +22,6 @@ namespace StoryBooks.Controllers
             _validator = validator;
             _createValidator = createValidator;
         }
-        [HttpGet("test-token")]
-        public IActionResult TestToken([FromHeader] string Authorization)
-        {
-            try
-            {
-                var token = Authorization.Replace("Bearer ", "");
-                var handler = new JwtSecurityTokenHandler();
-                var jwtToken = handler.ReadJwtToken(token);  // This should fail here if dependency issue
-                return Ok(jwtToken.Claims);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
         [HttpGet]
         public async Task<ActionResult<IEnumerable<StoryBookDTO>>> GetStoryBooks(int pageSize = 5, int pageNumber=1)
         {
@@ -53,7 +38,7 @@ namespace StoryBooks.Controllers
             return Ok(storyBook);
         }
 
-        [Authorize(AuthenticationSchemes = "Bearer")]
+        [Authorize]
         [HttpGet("ping")]
         public IActionResult Ping()
         {
@@ -154,7 +139,6 @@ namespace StoryBooks.Controllers
             var search_results = await _service.SearchStoryBookAsync(search_word);
             return Ok(search_results);
         }
-        //add images as static files
 
     }
 }

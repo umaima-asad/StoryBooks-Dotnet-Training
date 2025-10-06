@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
 using StoryBooks.Models;
 namespace StoryBooks.Data
 {
-    public class StoryBookContext : DbContext
+    public class StoryBookContext : IdentityDbContext
     {
         public StoryBookContext(DbContextOptions<StoryBookContext> options) : base(options)
         {
