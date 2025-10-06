@@ -8,6 +8,7 @@ using System.IdentityModel.Tokens.Jwt;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 namespace StoryBooks.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class StoryBookController : ControllerBase
@@ -22,13 +23,14 @@ namespace StoryBooks.Controllers
             _validator = validator;
             _createValidator = createValidator;
         }
+        [Authorize (Roles = "Librarian , Student")]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<StoryBookDTO>>> GetStoryBooks(int pageSize = 5, int pageNumber=1)
         {
             var storyBooks = await _service.GetStoryBooksAsync(pageSize,pageNumber);
             return Ok(storyBooks);
         }
-
+        [Authorize(Roles = "Librarian , Student")]
         [HttpGet("{id}")]
         public async Task<ActionResult<StoryBookDTO>> GetStoryBook(int id)
         {
@@ -38,14 +40,14 @@ namespace StoryBooks.Controllers
             return Ok(storyBook);
         }
 
-        [Authorize]
+        [Authorize(Roles = "Librarian , Student")]
         [HttpGet("ping")]
         public IActionResult Ping()
         {
             return Ok("pong 🏓");
         }
 
-       
+        [Authorize(Roles = "Librarian")]
         [HttpPost]
         [Authorize]
         public async Task<ActionResult<StoryBookDTO>> CreateStoryBook(CreateStoryBookDTO storyBookDto)
@@ -85,6 +87,7 @@ namespace StoryBooks.Controllers
             var created = await _service.CreateStoryBookAsync(createdStoryBook);
             return CreatedAtAction(nameof(GetStoryBook), new { id = created.BookName }, created);
         }
+        [Authorize(Roles = "Librarian")]
         [HttpPut("{id}")]
         public async Task<ActionResult<StoryBookDTO>> UpdateStoryBook(int id, CreateStoryBookDTO storyBookDto)
         {
@@ -122,6 +125,7 @@ namespace StoryBooks.Controllers
             
             return Ok(updatedStoryBook);
         }
+        [Authorize(Roles = "Librarian")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteStoryBook(int id)
         {
@@ -130,6 +134,7 @@ namespace StoryBooks.Controllers
             
             return NoContent();
         }
+        [Authorize(Roles = "Librarian, Student")]
         [HttpGet("search")]
         public async Task<ActionResult<IEnumerable<StoryBookDTO>>> SearchStoryBooks(string search_word)
         {
