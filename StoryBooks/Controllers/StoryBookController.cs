@@ -16,12 +16,14 @@ namespace StoryBooks.Controllers
         private readonly IStoryBookServices _service;
         private readonly IValidator<StoryBookDTO> _validator;
         private readonly IValidator<CreateStoryBookDTO> _createValidator;
-        public StoryBookController(IStoryBookServices service, IValidator<StoryBookDTO> validator, IValidator<CreateStoryBookDTO> createValidator)
+        private readonly IAuthorizationService _authorizationService;
+        public StoryBookController(IStoryBookServices service, IValidator<StoryBookDTO> validator, IValidator<CreateStoryBookDTO> createValidator,IAuthorizationService authorizationService)
         {
 
             _service = service;
             _validator = validator;
             _createValidator = createValidator;
+            _authorizationService = authorizationService;
         }
         [Authorize (Roles = "Librarian , Student")]
         [HttpGet]
@@ -87,8 +89,9 @@ namespace StoryBooks.Controllers
             var created = await _service.CreateStoryBookAsync(createdStoryBook);
             return CreatedAtAction(nameof(GetStoryBook), new { id = created.BookName }, created);
         }
+
+
         [Authorize(Roles = "Librarian")]
-        [Authorize(Policy = "CanEditWithoutCover")]
         [HttpPut("{id}")]
         public async Task<ActionResult<StoryBookDTO>> UpdateStoryBook(int id, CreateStoryBookDTO storyBookDto)
         {
@@ -97,6 +100,7 @@ namespace StoryBooks.Controllers
                 return BadRequest(validationResult.Errors);
 
             if (!ModelState.IsValid) return BadRequest(ModelState);
+
 
             string? imagePath = null;
             if (storyBookDto.Cover != null && storyBookDto.Cover.Length > 0)
@@ -115,6 +119,17 @@ namespace StoryBooks.Controllers
                 imagePath = $"/images/{uniqueFileName}";
 
             }
+
+            var dbStorybook = await _service.GetStoryBookByIdAsync(id);
+            if (dbStorybook == null)
+                return NotFound();
+
+            var authResult = await _authorizationService.AuthorizeAsync(User, dbStorybook, "CanEditWithoutCover");
+            if (!authResult.Succeeded)
+            {
+                return Forbid(); // or return Unauthorized() if you prefer
+            }
+
             var storyBookToUpdate = new StoryBookDTO
             {
                 BookName = storyBookDto.BookName,

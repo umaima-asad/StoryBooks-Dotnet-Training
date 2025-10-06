@@ -8,7 +8,7 @@ namespace StoryBooks.Requirements
     {
         protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, CanEditNullCoverImageRequirement requirement, StoryBook resource)
         {
-            if (string.IsNullOrEmpty(resource.Cover))
+            if (resource.Cover==null)
             {
                 context.Succeed(requirement);
             }
