@@ -55,6 +55,15 @@ public class Program
             .AddRoles<IdentityRole>()
             .AddEntityFrameworkStores<StoryBookContext>();
 
+        builder.Services.AddCors(options =>
+        {
+            options.AddPolicy("CORS Testing", policy =>
+            {
+                policy.AllowAnyOrigin()
+                      .AllowAnyHeader()
+                      .AllowAnyMethod();
+            });
+        });
 
         builder.Services.AddAuthorization(options =>
         {
@@ -80,6 +89,7 @@ public class Program
 
         app.UseStaticFiles();
 
+        app.UseCors("CORS Testing");
 
         app.UseAuthorization();
 
