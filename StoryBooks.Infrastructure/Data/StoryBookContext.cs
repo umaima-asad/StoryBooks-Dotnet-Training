@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
-using StoryBooks.Models;
-namespace StoryBooks.Data
+using StoryBooks.Domain.Models;
+namespace StoryBooks.Infrastructure.Data
 {
     public class StoryBookContext : IdentityDbContext
     {

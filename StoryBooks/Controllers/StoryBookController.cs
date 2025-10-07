@@ -2,8 +2,9 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using StoryBooks.DTOs;  
-using StoryBooks.Services;
+using StoryBooks.Application.DTOs;  
+using StoryBooks.Application.Services;
+using StoryBooks.Domain.Models;
 using System.IdentityModel.Tokens.Jwt;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 namespace StoryBooks.Controllers
@@ -54,6 +55,7 @@ namespace StoryBooks.Controllers
         [Authorize]
         public async Task<ActionResult<StoryBookDTO>> CreateStoryBook(CreateStoryBookDTO storyBookDto)
         {
+
             bool exists = await _service.StoryBookExistsAsync(storyBookDto);
             if (exists)
                return BadRequest("Book already exists");

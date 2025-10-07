@@ -3,20 +3,18 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using StoryBooks.Data;
+using StoryBooks.Infrastructure.Data;
+
 
 #nullable disable
 
 namespace StoryBooks.Migrations
 {
     [DbContext(typeof(StoryBookContext))]
-    [Migration("20251006070221_identitycontext")]
-    partial class identitycontext
+    partial class StoryBookContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

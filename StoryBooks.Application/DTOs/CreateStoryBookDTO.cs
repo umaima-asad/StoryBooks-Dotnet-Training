@@ -1,4 +1,6 @@
-﻿namespace StoryBooks.DTOs
+﻿using Microsoft.AspNetCore.Http;
+
+namespace StoryBooks.Application.DTOs
 {
     public class CreateStoryBookDTO
     {
