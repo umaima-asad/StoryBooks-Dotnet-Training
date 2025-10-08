@@ -1,15 +1,16 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.EntityFrameworkCore;
+using StackExchange.Redis;
 using StoryBooks.Application.Services;
+using StoryBooks.Domain.Interfaces;
+using StoryBooks.Infrastructure.Data;
+using StoryBooks.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using StoryBooks.Infrastructure.Data;
-using StoryBooks.Domain.Interfaces;
-using StoryBooks.Infrastructure.Repositories;
 namespace StoryBooks.Infrastructure
 {
     public static class DependencyInjection
@@ -19,6 +20,9 @@ namespace StoryBooks.Infrastructure
             services.AddDbContext<StoryBookContext>(options =>
                 options.UseSqlServer(config.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.")));
             services.AddScoped<IStoryBookRepository, StoryBookRepository>();
+            var redisConnection = config.GetConnectionString("Redis");
+            services.AddSingleton<IConnectionMultiplexer>(sp =>
+                ConnectionMultiplexer.Connect(redisConnection));
             return services;
         }
     }
