@@ -4,8 +4,8 @@ namespace StoryBooks.Application.Services
 {
     public interface IStoryBookServices
     {
-        Task<IEnumerable<StoryBookDTO>>GetStoryBooksAsync(int pageSize, int pageNumber);
-        Task<StoryBookDTO> GetStoryBookByIdAsync(int id);
+        Task<(IEnumerable<StoryBookDTO> StoryBooks, int TotalCount)> GetStoryBooksAsync(int pageNumber, int pageSize);
+        Task<StoryBookDTO?> GetStoryBookByIdAsync(int id);
         Task<StoryBookDTO> CreateStoryBookAsync(StoryBookDTO storyBookDto);
         Task<StoryBook> UpdateStoryBookAsync(int id, StoryBookDTO storyBookDto);
         Task<bool> DeleteStoryBookAsync(int id);

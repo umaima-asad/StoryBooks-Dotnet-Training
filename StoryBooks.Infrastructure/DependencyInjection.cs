@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using StoryBooks.Infrastructure.Data;
+using StoryBooks.Domain.Interfaces;
+using StoryBooks.Infrastructure.Repositories;
 namespace StoryBooks.Infrastructure
 {
     public static class DependencyInjection
@@ -16,6 +18,7 @@ namespace StoryBooks.Infrastructure
         {
             services.AddDbContext<StoryBookContext>(options =>
                 options.UseSqlServer(config.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.")));
+            services.AddScoped<IStoryBookRepository, StoryBookRepository>();
             return services;
         }
     }

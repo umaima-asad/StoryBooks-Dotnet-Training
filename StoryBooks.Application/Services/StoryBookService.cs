@@ -14,20 +14,24 @@ namespace StoryBooks.Application.Services
         {
             _StoryBookcontext = StoryBookcontext;
         }
-        public async Task<IEnumerable<StoryBookDTO>> GetStoryBooksAsync(int pageSize, int pageNumber)
+        public async Task<(IEnumerable<StoryBookDTO> StoryBooks, int TotalCount)> GetStoryBooksAsync(int pageNumber, int pageSize)
         {
-            var stories = await _StoryBookcontext.GetAllStoryBooksAsync(pageSize, pageNumber);
-            var dtos = stories.Select(sb => new StoryBookDTO
+            var (items, totalCount) = await _StoryBookcontext.GetAllStoryBooksAsync(pageNumber, pageSize);
+
+            var storyBookDtos = items.Select(sb => new StoryBookDTO
             {
                 BookName = sb.BookName,
                 Author = sb.Author,
                 Cover = sb.Cover
-            }).ToList();
-            return dtos;
+            });
+
+            return (storyBookDtos, totalCount);
         }
-        public async Task<StoryBookDTO> GetStoryBookByIdAsync(int id)
+        public async Task<StoryBookDTO?> GetStoryBookByIdAsync(int id)
         {
             var storyBook = await _StoryBookcontext.GetStoryBooksByIdAsync(id);
+            if (storyBook == null)
+                return null;
             return new StoryBookDTO
             {
                 BookName = storyBook.BookName,

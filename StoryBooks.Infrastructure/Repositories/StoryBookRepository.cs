@@ -19,18 +19,21 @@ namespace StoryBooks.Infrastructure.Repositories
         {
             _context = context;
         }
-        public async Task<IEnumerable<StoryBook>> GetAllStoryBooksAsync(int pageNumber, int pageSize)
+        public async Task<(IEnumerable<StoryBook> Items, int TotalCount)> GetAllStoryBooksAsync(int pageNumber, int pageSize)
         {
-            return await _context.StoryBooks
-                 .OrderBy(sb => sb.Id)
-                 .Skip((pageNumber - 1) * pageSize)
-                 .Take(pageSize)
-                 .ToListAsync();
+            var query = _context.StoryBooks.AsNoTracking();
+            var totalCount = await query.CountAsync();
+
+            var items = await query
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            return (items, totalCount);
         }
-        public async Task<StoryBook> GetStoryBooksByIdAsync(int id)
+        public async Task<StoryBook?> GetStoryBooksByIdAsync(int id)
         {
-            var storyBook = await _context.StoryBooks.FindAsync(id);
-            return storyBook;
+            return await _context.StoryBooks.FindAsync(id);
         }
         public async Task<StoryBook> AddStoryBookAsync(StoryBook storyBook)
         {
@@ -43,12 +46,18 @@ namespace StoryBooks.Infrastructure.Repositories
             var storyBook = await _context.StoryBooks.FindAsync(id);
             if (storyBook == null) return null;
 
-            storyBook.BookName = storyBookDto.BookName;
-            storyBook.Author = storyBookDto.Author;
-            storyBook.Cover = storyBookDto.Cover;
+            if (!string.IsNullOrWhiteSpace(storyBookDto.BookName))
+                storyBook.BookName = storyBookDto.BookName;
+
+            if (!string.IsNullOrWhiteSpace(storyBookDto.Author))
+                storyBook.Author = storyBookDto.Author;
+
+            if (!string.IsNullOrWhiteSpace(storyBookDto.Cover))
+                storyBook.Cover = storyBookDto.Cover;
 
             await _context.SaveChangesAsync();
-            return storyBookDto;
+
+            return storyBook;
         }
         public async Task<bool> DeleteStoryBookAsync(int id)
         {
@@ -66,14 +75,8 @@ namespace StoryBooks.Infrastructure.Repositories
         }
         public async Task<bool>StoryBookExistsAsync(StoryBook story)
         {
-            var storyBook = await _context.StoryBooks
-                .Where(b => b.BookName.Contains(story.BookName) && b.Author.Contains(story.Author))
-                .ToListAsync(); ;
-            if (storyBook == null)
-            {
-                return false;
-            }
-            return true;
+            return await _context.StoryBooks
+                .AnyAsync(b => b.BookName == story.BookName && b.Author == story.Author);
         }
     }
 }
