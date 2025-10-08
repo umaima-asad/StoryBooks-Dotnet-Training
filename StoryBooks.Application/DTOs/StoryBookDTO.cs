@@ -1,4 +1,4 @@
-﻿namespace StoryBooks.DTOs
+﻿namespace StoryBooks.Application.DTOs
 {
     public class StoryBookDTO
     {

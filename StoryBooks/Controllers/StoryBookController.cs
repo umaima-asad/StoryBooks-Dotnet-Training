@@ -2,8 +2,9 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using StoryBooks.DTOs;  
-using StoryBooks.Services;
+using StoryBooks.Application.DTOs;  
+using StoryBooks.Application.Services;
+using StoryBooks.Domain.Models;
 using System.IdentityModel.Tokens.Jwt;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 namespace StoryBooks.Controllers
@@ -27,14 +28,23 @@ namespace StoryBooks.Controllers
         }
         [Authorize (Roles = "Librarian , Student")]
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<StoryBookDTO>>> GetStoryBooks(int pageSize = 5, int pageNumber=1)
+        public async Task<IActionResult> GetStoryBooks(int pageNumber = 1, int pageSize = 10)
         {
-            var storyBooks = await _service.GetStoryBooksAsync(pageSize,pageNumber);
-            return Ok(storyBooks);
+            var (storyBooks, totalCount) = await _service.GetStoryBooksAsync(pageNumber, pageSize);
+
+            var response = new
+            {
+                TotalCount = totalCount,
+                PageNumber = pageNumber,
+                PageSize = pageSize,
+                Items = storyBooks
+            };
+
+            return Ok(response);
         }
         [Authorize(Roles = "Librarian , Student")]
         [HttpGet("{id}")]
-        public async Task<ActionResult<StoryBookDTO>> GetStoryBook(int id)
+        public async Task<ActionResult<StoryBookDTO?>> GetStoryBook(int id)
         {
             var storyBook = await _service.GetStoryBookByIdAsync(id);
             if (storyBook == null) return NotFound();
@@ -54,6 +64,7 @@ namespace StoryBooks.Controllers
         [Authorize]
         public async Task<ActionResult<StoryBookDTO>> CreateStoryBook(CreateStoryBookDTO storyBookDto)
         {
+
             bool exists = await _service.StoryBookExistsAsync(storyBookDto);
             if (exists)
                return BadRequest("Book already exists");

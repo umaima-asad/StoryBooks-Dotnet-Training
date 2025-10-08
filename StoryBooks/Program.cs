@@ -8,15 +8,16 @@ using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using StoryBooks.Data;
-using StoryBooks.DTOs;
-using StoryBooks.Models;
+using StoryBooks.Infrastructure.Data;
+using StoryBooks.Application.DTOs;
+using StoryBooks.Domain.Models;
 using StoryBooks.Requirements;
-using StoryBooks.Services;
+using StoryBooks.Application.Services;
 using Swashbuckle.AspNetCore.Filters;
 using System;
 using System.Text;
-
+using StoryBooks.Application;
+using StoryBooks.Infrastructure;
 public class Program
 {
     public static async Task Main(string[] args)
@@ -48,9 +49,6 @@ public class Program
             c.OperationFilter<SecurityRequirementsOperationFilter>();
         });
 
-        builder.Services.AddDbContext<StoryBookContext>(options =>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.")));
-
         builder.Services.AddIdentityApiEndpoints<UsersModel>()
             .AddRoles<IdentityRole>()
             .AddEntityFrameworkStores<StoryBookContext>();
@@ -70,12 +68,9 @@ public class Program
             options.AddPolicy("CanEditWithoutCover", policy =>
                 policy.Requirements.Add(new CanEditNullCoverImageRequirement()));
         });
-
-        builder.Services.AddScoped<IStoryBookServices, StoryBookService>();
         builder.Services.AddScoped<IAuthorizationHandler, CanEditNullCoverImageHandler>();
-        builder.Services.AddScoped<IValidator<StoryBookDTO>, StoryBookDTOValidator>();
-        builder.Services.AddScoped<IValidator<CreateStoryBookDTO>, CreateStoryBookDTOValidator>();
-
+        builder.Services.AddApplication();
+        builder.Services.AddInfrastructure(builder.Configuration);
         var app = builder.Build();
 
         if (app.Environment.IsDevelopment())

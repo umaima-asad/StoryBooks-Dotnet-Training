@@ -1,4 +1,4 @@
-﻿namespace StoryBooks.Models
+﻿namespace StoryBooks.Domain.Models
 {
     public class StoryBook
     {

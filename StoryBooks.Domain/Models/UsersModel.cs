@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
-
-namespace StoryBooks.Models
+namespace StoryBooks.Domain.Models
 {
     public class UsersModel : IdentityUser
     {

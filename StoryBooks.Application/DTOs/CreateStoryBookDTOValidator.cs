@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
-using StoryBooks.DTOs;
-namespace StoryBooks.DTOs
+using StoryBooks.Application.DTOs;
+namespace StoryBooks.Application.DTOs
 {
     public class CreateStoryBookDTOValidator : AbstractValidator<CreateStoryBookDTO>
     {
