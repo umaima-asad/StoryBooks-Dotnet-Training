@@ -2,7 +2,7 @@
 using StoryBooks.Application.DTOs;
 using StoryBooks.Domain.Interfaces;
 using StoryBooks.Domain.Models;
-
+using StoryBooks.Application.MappingProfiles;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace StoryBooks.Application.Services
@@ -14,50 +14,34 @@ namespace StoryBooks.Application.Services
         {
             _StoryBookcontext = StoryBookcontext;
         }
+
+
         public async Task<(IEnumerable<StoryBookDTO> StoryBooks, int TotalCount)> GetStoryBooksAsync(int pageNumber, int pageSize)
         {
             var (items, totalCount) = await _StoryBookcontext.GetAllStoryBooksAsync(pageNumber, pageSize);
 
-            var storyBookDtos = items.Select(sb => new StoryBookDTO
-            {
-                BookName = sb.BookName,
-                Author = sb.Author,
-                Cover = sb.Cover
-            });
+            var storyBookDtos = items.Select(sb => sb.ToDto());
 
             return (storyBookDtos, totalCount);
         }
+
+
         public async Task<StoryBookDTO?> GetStoryBookByIdAsync(int id)
         {
             var storyBook = await _StoryBookcontext.GetStoryBooksByIdAsync(id);
             if (storyBook == null)
                 return null;
-            return new StoryBookDTO
-            {
-                BookName = storyBook.BookName,
-                Author = storyBook.Author,
-                Cover = storyBook.Cover
-            };
+            return storyBook.ToDto();
         }
         public async Task<StoryBookDTO> CreateStoryBookAsync(StoryBookDTO storyBookDto)
         {
-            var storyBook = new StoryBook
-            {
-                BookName = storyBookDto.BookName,
-                Author = storyBookDto.Author,
-                Cover = storyBookDto.Cover
-            };
+            var storyBook = storyBookDto.ToEntity();
             var createdStoryBook = await _StoryBookcontext.AddStoryBookAsync(storyBook);
             return storyBookDto;
         }
         public async Task<StoryBook> UpdateStoryBookAsync(int id, StoryBookDTO storyBookDto)
         {
-            var storyBook = new StoryBook
-            {
-                BookName = storyBookDto.BookName,
-                Author = storyBookDto.Author,
-                Cover = storyBookDto.Cover
-            };
+            var storyBook = storyBookDto.ToEntity();
             var updatedStoryBook = await _StoryBookcontext.UpdateStoryBookAsync(id, storyBook); 
             return updatedStoryBook;
         }
@@ -70,20 +54,11 @@ namespace StoryBooks.Application.Services
         public async Task<IEnumerable<StoryBookDTO>> SearchStoryBookAsync(string search_word)
         {
             var stories = await _StoryBookcontext.SearchStoryBookAsync(search_word);
-            return stories.Select(sb => new StoryBookDTO
-            {
-                BookName = sb.BookName,
-                Author = sb.Author,
-                Cover = sb.Cover
-            }).ToList();
+            return stories.Select(sb => sb.ToDto()).ToList();
         }
         public async Task<bool> StoryBookExistsAsync(CreateStoryBookDTO dto)
         {
-            var story = new StoryBook
-            {
-                BookName = dto.BookName,
-                Author = dto.Author,
-            };
+            var story = dto.ToEntity();
             return await _StoryBookcontext.StoryBookExistsAsync(story);
         }
     }

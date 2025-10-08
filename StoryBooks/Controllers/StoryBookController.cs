@@ -1,12 +1,9 @@
 ﻿using FluentValidation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using StoryBooks.Application.DTOs;  
 using StoryBooks.Application.Services;
-using StoryBooks.Domain.Models;
-using System.IdentityModel.Tokens.Jwt;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+
 namespace StoryBooks.Controllers
 {
     [Authorize]
@@ -26,6 +23,8 @@ namespace StoryBooks.Controllers
             _createValidator = createValidator;
             _authorizationService = authorizationService;
         }
+
+
         [Authorize (Roles = "Librarian , Student")]
         [HttpGet]
         public async Task<IActionResult> GetStoryBooks(int pageNumber = 1, int pageSize = 10)
@@ -42,6 +41,8 @@ namespace StoryBooks.Controllers
 
             return Ok(response);
         }
+
+
         [Authorize(Roles = "Librarian , Student")]
         [HttpGet("{id}")]
         public async Task<ActionResult<StoryBookDTO?>> GetStoryBook(int id)
@@ -52,12 +53,14 @@ namespace StoryBooks.Controllers
             return Ok(storyBook);
         }
 
+
         [Authorize(Roles = "Librarian , Student")]
         [HttpGet("ping")]
         public IActionResult Ping()
         {
             return Ok("pong 🏓");
         }
+
 
         [Authorize(Roles = "Librarian")]
         [HttpPost]
@@ -152,15 +155,18 @@ namespace StoryBooks.Controllers
             
             return Ok(updatedStoryBook);
         }
+
+
         [Authorize(Roles = "Librarian")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteStoryBook(int id)
         {
             var result = await _service.DeleteStoryBookAsync(id);
             if (!result) return NotFound();
-            
             return NoContent();
         }
+
+
         [Authorize(Roles = "Librarian, Student")]
         [HttpGet("search")]
         public async Task<ActionResult<IEnumerable<StoryBookDTO>>> SearchStoryBooks(string search_word)

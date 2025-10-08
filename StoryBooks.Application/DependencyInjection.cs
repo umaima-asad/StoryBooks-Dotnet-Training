@@ -1,13 +1,14 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.DependencyInjection;
+using StoryBooks.Application.DTOs;
+using StoryBooks.Application.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using StoryBooks.Application.Services;
-using StoryBooks.Application.DTOs;
-using Microsoft.AspNetCore.Authorization;
-using FluentValidation;
 namespace StoryBooks.Application
 {
     public static class DependencyInjection
@@ -18,6 +19,7 @@ namespace StoryBooks.Application
             services.AddScoped<IStoryBookServices, StoryBookService>();
             services.AddScoped<IValidator<StoryBookDTO>, StoryBookDTOValidator>();
             services.AddScoped<IValidator<CreateStoryBookDTO>, CreateStoryBookDTOValidator>();
+            services.AddAutoMapper(typeof(DependencyInjection).Assembly);
             return services;
         }
     }
