@@ -20,9 +20,12 @@ namespace StoryBooks.Infrastructure
             services.AddDbContext<StoryBookContext>(options =>
                 options.UseSqlServer(config.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.")));
             services.AddScoped<IStoryBookRepository, StoryBookRepository>();
-            var redisConnection = config.GetConnectionString("Redis");
-            services.AddSingleton<IConnectionMultiplexer>(sp =>
-                ConnectionMultiplexer.Connect(redisConnection));
+            services.AddStackExchangeRedisCache(options =>
+            {
+                options.Configuration = config.GetConnectionString("Redis");
+                options.InstanceName = "StoryBooks_";
+            });
+            services.AddScoped<IRedisCacheService, RedisCacheService>();
             return services;
         }
     }

@@ -1,4 +1,5 @@
 using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -8,16 +9,17 @@ using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using StoryBooks.Infrastructure.Data;
+using StoryBooks.Application;
 using StoryBooks.Application.DTOs;
-using StoryBooks.Domain.Models;
-using StoryBooks.Requirements;
 using StoryBooks.Application.Services;
+using StoryBooks.Domain.Models;
+using StoryBooks.Infrastructure;
+using StoryBooks.Infrastructure.Data;
+using StoryBooks.Requirements;
 using Swashbuckle.AspNetCore.Filters;
 using System;
+using System.Reflection;
 using System.Text;
-using StoryBooks.Application;
-using StoryBooks.Infrastructure;
 public class Program
 {
     public static async Task Main(string[] args)
@@ -69,6 +71,10 @@ public class Program
                 policy.Requirements.Add(new CanEditNullCoverImageRequirement()));
         });
         builder.Services.AddScoped<IAuthorizationHandler, CanEditNullCoverImageHandler>();
+        builder.Services.AddValidatorsFromAssembly(Assembly.Load("StoryBooks.Application"));
+
+        // Optional: for ASP.NET automatic validation integration
+        builder.Services.AddFluentValidationAutoValidation();
         builder.Services.AddApplication();
         builder.Services.AddInfrastructure(builder.Configuration);
         var app = builder.Build();
