@@ -171,3 +171,991 @@ WHERE [s].[BookName] LIKE @__search_word_0_contains ESCAPE N'\' OR [s].[Author] 
 2025-10-09 14:35:44.764 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.SearchStoryBooks (StoryBooks)'
 2025-10-09 14:35:44.765 +05:00 [INF] HTTP GET /api/StoryBook/search responded 200 in 9.8424 ms
 2025-10-09 14:35:44.768 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/StoryBook/search?search_word=hunger - 200 null application/json; charset=utf-8 17.7735ms
+2025-10-09 16:29:32.676 +05:00 [INF] User profile is available. Using 'C:\Users\Abdul\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-10-09 16:29:34.278 +05:00 [INF] Executed DbCommand (58ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-10-09 16:29:34.355 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-10-09 16:29:34.431 +05:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Fullname]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'UsersModel' AND [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-10-09 16:29:34.538 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Fullname]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'UsersModel' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-10-09 16:29:34.990 +05:00 [INF] Now listening on: https://localhost:7175
+2025-10-09 16:29:34.993 +05:00 [INF] Now listening on: http://localhost:5097
+2025-10-09 16:29:35.047 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-09 16:29:35.050 +05:00 [INF] Hosting environment: Development
+2025-10-09 16:29:35.054 +05:00 [INF] Content root path: C:\Users\Abdul\source\repos\StoryBooks\StoryBooks
+2025-10-09 16:29:36.120 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.html - null null
+2025-10-09 16:29:36.539 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.html - 200 null text/html;charset=utf-8 456.2456ms
+2025-10-09 16:29:36.688 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.js - null null
+2025-10-09 16:29:36.688 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-09 16:29:36.688 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_vs/browserLink - null null
+2025-10-09 16:29:36.745 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.js - 200 null application/javascript;charset=utf-8 57.137ms
+2025-10-09 16:29:36.776 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 88.436ms
+2025-10-09 16:29:36.962 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 273.7492ms
+2025-10-09 16:29:37.185 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - null null
+2025-10-09 16:29:37.789 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 603.4578ms
+2025-10-09 16:30:37.270 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7175/login - application/json 133
+2025-10-09 16:30:37.585 +05:00 [INF] CORS policy execution successful.
+2025-10-09 16:30:37.667 +05:00 [INF] Executing endpoint 'HTTP: POST /login'
+2025-10-09 16:30:37.869 +05:00 [INF] Executed DbCommand (10ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Fullname]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'UsersModel' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-10-09 16:30:38.072 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2025-10-09 16:30:38.117 +05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-10-09 16:30:38.131 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-10-09 16:30:38.149 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-09 16:30:38.164 +05:00 [INF] AuthenticationScheme: Identity.Bearer signed in.
+2025-10-09 16:30:38.185 +05:00 [INF] Executed endpoint 'HTTP: POST /login'
+2025-10-09 16:30:38.194 +05:00 [INF] HTTP POST /login responded 200 in 632.2739 ms
+2025-10-09 16:30:38.203 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7175/login - 200 null application/json; charset=utf-8 933.1122ms
+2025-10-09 16:37:51.321 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=10 - null null
+2025-10-09 16:37:51.423 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 16:37:51.517 +05:00 [INF] Route matched with {action = "GetStoryBooks", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStoryBooks(Int32, Int32) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 16:37:51.735 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) - Validation state: "Valid"
+2025-10-09 16:37:53.205 +05:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [StoryBooks] AS [s]
+2025-10-09 16:37:53.253 +05:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-10-09 16:37:53.260 +05:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-10-09 16:37:53.296 +05:00 [INF] Executed DbCommand (13ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Author], [s].[BookName], [s].[Cover]
+FROM [StoryBooks] AS [s]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-10-09 16:37:53.748 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1989.4308ms.
+2025-10-09 16:37:53.786 +05:00 [INF] Executing OkObjectResult, writing value of type 'StoryBooks.Application.DTOs.PagedStoryBooksDTO'.
+2025-10-09 16:37:53.820 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) in 2277.6491ms
+2025-10-09 16:37:53.832 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 16:37:53.839 +05:00 [INF] HTTP GET /api/StoryBook responded 200 in 2467.8222 ms
+2025-10-09 16:37:53.853 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 2551.4465ms
+2025-10-09 16:38:00.157 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=10 - null null
+2025-10-09 16:38:00.180 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 16:38:00.188 +05:00 [INF] Route matched with {action = "GetStoryBooks", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStoryBooks(Int32, Int32) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 16:38:00.208 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) - Validation state: "Valid"
+2025-10-09 16:38:00.232 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 13.3148ms.
+2025-10-09 16:38:00.242 +05:00 [INF] Executing OkObjectResult, writing value of type 'StoryBooks.Application.DTOs.PagedStoryBooksDTO'.
+2025-10-09 16:38:00.252 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) in 53.5467ms
+2025-10-09 16:38:00.262 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 16:38:00.272 +05:00 [INF] HTTP GET /api/StoryBook responded 200 in 96.3058 ms
+2025-10-09 16:38:00.287 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 132.2112ms
+2025-10-09 18:27:46.093 +05:00 [INF] User profile is available. Using 'C:\Users\Abdul\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-10-09 18:27:47.576 +05:00 [INF] Executed DbCommand (56ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-10-09 18:27:47.651 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-10-09 18:27:47.733 +05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Fullname]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'UsersModel' AND [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-10-09 18:27:47.895 +05:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Fullname]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'UsersModel' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-10-09 18:27:48.853 +05:00 [INF] Now listening on: https://localhost:7175
+2025-10-09 18:27:48.855 +05:00 [INF] Now listening on: http://localhost:5097
+2025-10-09 18:27:48.908 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-09 18:27:48.910 +05:00 [INF] Hosting environment: Development
+2025-10-09 18:27:48.913 +05:00 [INF] Content root path: C:\Users\Abdul\source\repos\StoryBooks\StoryBooks
+2025-10-09 18:27:49.980 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.html - null null
+2025-10-09 18:27:50.221 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.html - 200 null text/html;charset=utf-8 282.9771ms
+2025-10-09 18:27:50.249 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-09 18:27:50.249 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.js - null null
+2025-10-09 18:27:50.261 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_vs/browserLink - null null
+2025-10-09 18:27:50.270 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.js - 200 null application/javascript;charset=utf-8 21.4923ms
+2025-10-09 18:27:50.289 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 40.3705ms
+2025-10-09 18:27:50.342 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 81.4605ms
+2025-10-09 18:27:50.455 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - null null
+2025-10-09 18:27:50.514 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 59.6555ms
+2025-10-09 18:32:15.769 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7175/login - application/json 133
+2025-10-09 18:32:15.784 +05:00 [INF] CORS policy execution successful.
+2025-10-09 18:32:15.792 +05:00 [INF] Executing endpoint 'HTTP: POST /login'
+2025-10-09 18:32:15.848 +05:00 [INF] Executed DbCommand (13ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Fullname]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'UsersModel' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-10-09 18:32:16.001 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2025-10-09 18:32:16.045 +05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-10-09 18:32:16.056 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-10-09 18:32:16.068 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-09 18:32:16.082 +05:00 [INF] AuthenticationScheme: Identity.Bearer signed in.
+2025-10-09 18:32:16.095 +05:00 [INF] Executed endpoint 'HTTP: POST /login'
+2025-10-09 18:32:16.099 +05:00 [INF] HTTP POST /login responded 200 in 316.9655 ms
+2025-10-09 18:32:16.111 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7175/login - 200 null application/json; charset=utf-8 342.3572ms
+2025-10-09 18:32:33.356 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=10 - null null
+2025-10-09 18:32:33.382 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 18:32:33.408 +05:00 [INF] Route matched with {action = "GetStoryBooks", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStoryBooks(Int32, Int32) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 18:32:33.461 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) - Validation state: "Valid"
+2025-10-09 18:32:33.730 +05:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [StoryBooks] AS [s]
+2025-10-09 18:32:33.743 +05:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-10-09 18:32:33.745 +05:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-10-09 18:32:33.754 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Author], [s].[BookName], [s].[Cover]
+FROM [StoryBooks] AS [s]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-10-09 18:32:33.844 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 374.9805ms.
+2025-10-09 18:32:33.857 +05:00 [INF] Executing OkObjectResult, writing value of type 'StoryBooks.Application.DTOs.PagedStoryBooksDTO'.
+2025-10-09 18:32:33.864 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) in 450.2989ms
+2025-10-09 18:32:33.867 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 18:32:33.869 +05:00 [INF] HTTP GET /api/StoryBook responded 200 in 500.5520 ms
+2025-10-09 18:32:33.873 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 518.4384ms
+2025-10-09 18:32:35.383 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=10 - null null
+2025-10-09 18:32:35.393 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 18:32:35.397 +05:00 [INF] Route matched with {action = "GetStoryBooks", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStoryBooks(Int32, Int32) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 18:32:35.409 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) - Validation state: "Valid"
+2025-10-09 18:32:35.415 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 3.5935ms.
+2025-10-09 18:32:35.419 +05:00 [INF] Executing OkObjectResult, writing value of type 'StoryBooks.Application.DTOs.PagedStoryBooksDTO'.
+2025-10-09 18:32:35.422 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) in 21.3198ms
+2025-10-09 18:32:35.425 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 18:32:35.427 +05:00 [INF] HTTP GET /api/StoryBook responded 200 in 35.5565 ms
+2025-10-09 18:32:35.430 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 47.8672ms
+2025-10-09 18:32:36.561 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=10 - null null
+2025-10-09 18:32:36.573 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 18:32:36.576 +05:00 [INF] Route matched with {action = "GetStoryBooks", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStoryBooks(Int32, Int32) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 18:32:36.588 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) - Validation state: "Valid"
+2025-10-09 18:32:36.593 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1.5372ms.
+2025-10-09 18:32:36.596 +05:00 [INF] Executing OkObjectResult, writing value of type 'StoryBooks.Application.DTOs.PagedStoryBooksDTO'.
+2025-10-09 18:32:36.598 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) in 17.1512ms
+2025-10-09 18:32:36.601 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 18:32:36.603 +05:00 [INF] HTTP GET /api/StoryBook responded 200 in 34.2848 ms
+2025-10-09 18:32:36.609 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 48.3801ms
+2025-10-09 18:32:58.544 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7175/api/StoryBook?BookName=Go%20Set%20Up%20A%20Watchman&Author=Harper%20Lee - multipart/form-data; boundary=----WebKitFormBoundaryMxPDVq81R4llDm4s 136
+2025-10-09 18:32:58.582 +05:00 [INF] CORS policy execution successful.
+2025-10-09 18:32:58.585 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.CreateStoryBook (StoryBooks)'
+2025-10-09 18:32:58.602 +05:00 [INF] Route matched with {action = "CreateStoryBook", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[StoryBooks.Application.DTOs.StoryBookDTO]] CreateStoryBook(StoryBooks.Application.DTOs.CreateStoryBookDTO) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 18:32:58.678 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.CreateStoryBook (StoryBooks) - Validation state: "Valid"
+2025-10-09 18:32:58.768 +05:00 [INF] Executed DbCommand (17ms) [Parameters=[@__story_BookName_0='?' (Size = 4000), @__story_Author_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [StoryBooks] AS [s]
+        WHERE [s].[BookName] = @__story_BookName_0 AND [s].[Author] = @__story_Author_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-10-09 18:32:58.942 +05:00 [INF] Executed DbCommand (12ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [StoryBooks] ([Author], [BookName], [Cover])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2);
+2025-10-09 18:32:58.971 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [StoryBooks] ([Author], [BookName], [Cover])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2);
+2025-10-09 18:32:58.978 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.CreateStoryBook (StoryBooks), returned result Microsoft.AspNetCore.Mvc.CreatedAtActionResult in 288.7796ms.
+2025-10-09 18:32:58.981 +05:00 [INF] Executing CreatedAtActionResult, writing value of type 'StoryBooks.Application.DTOs.StoryBookDTO'.
+2025-10-09 18:32:58.999 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.CreateStoryBook (StoryBooks) in 390.005ms
+2025-10-09 18:32:59.002 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.CreateStoryBook (StoryBooks)'
+2025-10-09 18:32:59.005 +05:00 [INF] HTTP POST /api/StoryBook responded 201 in 424.0305 ms
+2025-10-09 18:32:59.008 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7175/api/StoryBook?BookName=Go%20Set%20Up%20A%20Watchman&Author=Harper%20Lee - 201 null application/json; charset=utf-8 464.8093ms
+2025-10-09 18:33:08.722 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/StoryBook/1 - null null
+2025-10-09 18:33:08.753 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBook (StoryBooks)'
+2025-10-09 18:33:08.782 +05:00 [INF] Route matched with {action = "GetStoryBook", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[StoryBooks.Application.DTOs.StoryBookDTO]] GetStoryBook(Int32) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 18:33:08.809 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.GetStoryBook (StoryBooks) - Validation state: "Valid"
+2025-10-09 18:33:08.843 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Author], [s].[BookName], [s].[Cover]
+FROM [StoryBooks] AS [s]
+WHERE [s].[Id] = @__p_0
+2025-10-09 18:33:08.851 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.GetStoryBook (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 38.8517ms.
+2025-10-09 18:33:08.855 +05:00 [INF] Executing OkObjectResult, writing value of type 'StoryBooks.Application.DTOs.StoryBookDTO'.
+2025-10-09 18:33:08.858 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.GetStoryBook (StoryBooks) in 50.4267ms
+2025-10-09 18:33:08.861 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBook (StoryBooks)'
+2025-10-09 18:33:08.862 +05:00 [INF] HTTP GET /api/StoryBook/1 responded 200 in 115.2858 ms
+2025-10-09 18:33:08.866 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/StoryBook/1 - 200 null application/json; charset=utf-8 144.2241ms
+2025-10-09 18:33:14.346 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/StoryBook/12 - null null
+2025-10-09 18:33:14.353 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBook (StoryBooks)'
+2025-10-09 18:33:14.359 +05:00 [INF] Route matched with {action = "GetStoryBook", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[StoryBooks.Application.DTOs.StoryBookDTO]] GetStoryBook(Int32) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 18:33:14.366 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.GetStoryBook (StoryBooks) - Validation state: "Valid"
+2025-10-09 18:33:14.378 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Author], [s].[BookName], [s].[Cover]
+FROM [StoryBooks] AS [s]
+WHERE [s].[Id] = @__p_0
+2025-10-09 18:33:14.385 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.GetStoryBook (StoryBooks), returned result Microsoft.AspNetCore.Mvc.NotFoundResult in 14.0398ms.
+2025-10-09 18:33:14.390 +05:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-10-09 18:33:14.405 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.GetStoryBook (StoryBooks) in 41.0697ms
+2025-10-09 18:33:14.408 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBook (StoryBooks)'
+2025-10-09 18:33:14.410 +05:00 [INF] HTTP GET /api/StoryBook/12 responded 404 in 57.5089 ms
+2025-10-09 18:33:14.414 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/StoryBook/12 - 404 null application/problem+json; charset=utf-8 68.5835ms
+2025-10-09 18:33:19.171 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/StoryBook/1 - null null
+2025-10-09 18:33:19.177 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBook (StoryBooks)'
+2025-10-09 18:33:19.191 +05:00 [INF] Route matched with {action = "GetStoryBook", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[StoryBooks.Application.DTOs.StoryBookDTO]] GetStoryBook(Int32) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 18:33:19.205 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.GetStoryBook (StoryBooks) - Validation state: "Valid"
+2025-10-09 18:33:19.210 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.GetStoryBook (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1.6468ms.
+2025-10-09 18:33:19.213 +05:00 [INF] Executing OkObjectResult, writing value of type 'StoryBooks.Application.DTOs.StoryBookDTO'.
+2025-10-09 18:33:19.216 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.GetStoryBook (StoryBooks) in 13.5385ms
+2025-10-09 18:33:19.220 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBook (StoryBooks)'
+2025-10-09 18:33:19.223 +05:00 [INF] HTTP GET /api/StoryBook/1 responded 200 in 45.5863 ms
+2025-10-09 18:33:19.226 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/StoryBook/1 - 200 null application/json; charset=utf-8 56.2252ms
+2025-10-09 18:33:24.367 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/StoryBook/3 - null null
+2025-10-09 18:33:24.373 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBook (StoryBooks)'
+2025-10-09 18:33:24.377 +05:00 [INF] Route matched with {action = "GetStoryBook", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[StoryBooks.Application.DTOs.StoryBookDTO]] GetStoryBook(Int32) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 18:33:24.383 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.GetStoryBook (StoryBooks) - Validation state: "Valid"
+2025-10-09 18:33:24.395 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Author], [s].[BookName], [s].[Cover]
+FROM [StoryBooks] AS [s]
+WHERE [s].[Id] = @__p_0
+2025-10-09 18:33:24.401 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.GetStoryBook (StoryBooks), returned result Microsoft.AspNetCore.Mvc.NotFoundResult in 11.3001ms.
+2025-10-09 18:33:24.411 +05:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-10-09 18:33:24.414 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.GetStoryBook (StoryBooks) in 32.6442ms
+2025-10-09 18:33:24.417 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBook (StoryBooks)'
+2025-10-09 18:33:24.420 +05:00 [INF] HTTP GET /api/StoryBook/3 responded 404 in 46.7431 ms
+2025-10-09 18:33:24.425 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/StoryBook/3 - 404 null application/problem+json; charset=utf-8 58.6852ms
+2025-10-09 18:33:32.207 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/StoryBook/ping - null null
+2025-10-09 18:33:32.214 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.Ping (StoryBooks)'
+2025-10-09 18:33:32.220 +05:00 [INF] Route matched with {action = "Ping", controller = "StoryBook"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Ping() on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 18:33:32.225 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.Ping (StoryBooks) - Validation state: "Valid"
+2025-10-09 18:33:32.229 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.Ping (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.5916ms.
+2025-10-09 18:33:32.232 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2025-10-09 18:33:32.234 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.Ping (StoryBooks) in 10.5727ms
+2025-10-09 18:33:32.239 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.Ping (StoryBooks)'
+2025-10-09 18:33:32.241 +05:00 [INF] HTTP GET /api/StoryBook/ping responded 200 in 26.9157 ms
+2025-10-09 18:33:32.244 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/StoryBook/ping - 200 null text/plain; charset=utf-8 37.0485ms
+2025-10-09 18:33:40.020 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/StoryBook/search?search_word=har - null null
+2025-10-09 18:33:40.027 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.SearchStoryBooks (StoryBooks)'
+2025-10-09 18:33:40.032 +05:00 [INF] Route matched with {action = "SearchStoryBooks", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[StoryBooks.Application.DTOs.StoryBookDTO]]] SearchStoryBooks(System.String) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 18:33:40.039 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.SearchStoryBooks (StoryBooks) - Validation state: "Valid"
+2025-10-09 18:33:40.066 +05:00 [INF] Executed DbCommand (10ms) [Parameters=[@__search_word_0_contains='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Author], [s].[BookName], [s].[Cover]
+FROM [StoryBooks] AS [s]
+WHERE [s].[BookName] LIKE @__search_word_0_contains ESCAPE N'\' OR [s].[Author] LIKE @__search_word_0_contains ESCAPE N'\'
+2025-10-09 18:33:40.076 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.SearchStoryBooks (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 33.6816ms.
+2025-10-09 18:33:40.079 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[StoryBooks.Application.DTOs.StoryBookDTO, StoryBooks.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-09 18:33:40.082 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.SearchStoryBooks (StoryBooks) in 44.6709ms
+2025-10-09 18:33:40.086 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.SearchStoryBooks (StoryBooks)'
+2025-10-09 18:33:40.089 +05:00 [INF] HTTP GET /api/StoryBook/search responded 200 in 61.8116 ms
+2025-10-09 18:33:40.092 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/StoryBook/search?search_word=har - 200 null application/json; charset=utf-8 72.1811ms
+2025-10-09 18:33:48.564 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/StoryBook/search?search_word=har - null null
+2025-10-09 18:33:48.646 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.SearchStoryBooks (StoryBooks)'
+2025-10-09 18:33:48.656 +05:00 [INF] Route matched with {action = "SearchStoryBooks", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[StoryBooks.Application.DTOs.StoryBookDTO]]] SearchStoryBooks(System.String) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 18:33:48.662 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.SearchStoryBooks (StoryBooks) - Validation state: "Valid"
+2025-10-09 18:33:48.665 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.SearchStoryBooks (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1.6782ms.
+2025-10-09 18:33:48.668 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[StoryBooks.Application.DTOs.StoryBookDTO, StoryBooks.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-09 18:33:48.674 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.SearchStoryBooks (StoryBooks) in 12.8673ms
+2025-10-09 18:33:48.676 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.SearchStoryBooks (StoryBooks)'
+2025-10-09 18:33:48.678 +05:00 [INF] HTTP GET /api/StoryBook/search responded 200 in 32.4496 ms
+2025-10-09 18:33:48.682 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/StoryBook/search?search_word=har - 200 null application/json; charset=utf-8 117.6249ms
+2025-10-09 18:33:49.854 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/StoryBook/search?search_word=har - null null
+2025-10-09 18:33:49.859 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.SearchStoryBooks (StoryBooks)'
+2025-10-09 18:33:49.861 +05:00 [INF] Route matched with {action = "SearchStoryBooks", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[StoryBooks.Application.DTOs.StoryBookDTO]]] SearchStoryBooks(System.String) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 18:33:49.865 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.SearchStoryBooks (StoryBooks) - Validation state: "Valid"
+2025-10-09 18:33:49.870 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.SearchStoryBooks (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2.3983ms.
+2025-10-09 18:33:49.874 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[StoryBooks.Application.DTOs.StoryBookDTO, StoryBooks.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-09 18:33:49.877 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.SearchStoryBooks (StoryBooks) in 12.5534ms
+2025-10-09 18:33:49.880 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.SearchStoryBooks (StoryBooks)'
+2025-10-09 18:33:49.882 +05:00 [INF] HTTP GET /api/StoryBook/search responded 200 in 22.3814 ms
+2025-10-09 18:33:49.886 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/StoryBook/search?search_word=har - 200 null application/json; charset=utf-8 33.0885ms
+2025-10-09 18:36:47.311 +05:00 [INF] User profile is available. Using 'C:\Users\Abdul\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-10-09 18:36:49.536 +05:00 [INF] Executed DbCommand (77ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-10-09 18:36:49.685 +05:00 [INF] Executed DbCommand (18ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-10-09 18:36:49.801 +05:00 [INF] Executed DbCommand (13ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Fullname]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'UsersModel' AND [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-10-09 18:36:49.981 +05:00 [INF] Executed DbCommand (14ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Fullname]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'UsersModel' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-10-09 18:36:50.433 +05:00 [INF] Now listening on: https://localhost:7175
+2025-10-09 18:36:50.436 +05:00 [INF] Now listening on: http://localhost:5097
+2025-10-09 18:36:50.511 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-09 18:36:50.515 +05:00 [INF] Hosting environment: Development
+2025-10-09 18:36:50.518 +05:00 [INF] Content root path: C:\Users\Abdul\source\repos\StoryBooks\StoryBooks
+2025-10-09 18:36:50.949 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.html - null null
+2025-10-09 18:36:51.274 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.html - 200 null text/html;charset=utf-8 383.5572ms
+2025-10-09 18:36:51.307 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-09 18:36:51.307 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.js - null null
+2025-10-09 18:36:51.323 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_vs/browserLink - null null
+2025-10-09 18:36:51.357 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 50.849ms
+2025-10-09 18:36:51.361 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.js - 200 null application/javascript;charset=utf-8 55.1572ms
+2025-10-09 18:36:51.460 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 137.7074ms
+2025-10-09 18:36:51.661 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - null null
+2025-10-09 18:36:51.709 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 48.5705ms
+2025-10-09 18:38:00.518 +05:00 [INF] User profile is available. Using 'C:\Users\Abdul\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-10-09 18:38:01.871 +05:00 [INF] Executed DbCommand (52ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-10-09 18:38:01.936 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-10-09 18:38:02.030 +05:00 [INF] Executed DbCommand (8ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Fullname]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'UsersModel' AND [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-10-09 18:38:02.141 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Fullname]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'UsersModel' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-10-09 18:38:02.450 +05:00 [INF] Now listening on: https://localhost:7175
+2025-10-09 18:38:02.452 +05:00 [INF] Now listening on: http://localhost:5097
+2025-10-09 18:38:02.492 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-09 18:38:02.495 +05:00 [INF] Hosting environment: Development
+2025-10-09 18:38:02.497 +05:00 [INF] Content root path: C:\Users\Abdul\source\repos\StoryBooks\StoryBooks
+2025-10-09 18:38:03.025 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.html - null null
+2025-10-09 18:38:03.251 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.html - 200 null text/html;charset=utf-8 259.3347ms
+2025-10-09 18:38:03.271 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-09 18:38:03.271 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.js - null null
+2025-10-09 18:38:03.282 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_vs/browserLink - null null
+2025-10-09 18:38:03.297 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.js - 200 null application/javascript;charset=utf-8 25.6168ms
+2025-10-09 18:38:03.299 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 28.0936ms
+2025-10-09 18:38:03.358 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 76.169ms
+2025-10-09 18:38:03.465 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - null null
+2025-10-09 18:38:03.502 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 38.0488ms
+2025-10-09 18:44:34.247 +05:00 [INF] User profile is available. Using 'C:\Users\Abdul\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-10-09 18:44:35.971 +05:00 [INF] Executed DbCommand (58ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-10-09 18:44:36.053 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-10-09 18:44:36.136 +05:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Fullname]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'UsersModel' AND [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-10-09 18:44:36.262 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Fullname]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'UsersModel' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-10-09 18:44:36.673 +05:00 [INF] Now listening on: https://localhost:7175
+2025-10-09 18:44:36.676 +05:00 [INF] Now listening on: http://localhost:5097
+2025-10-09 18:44:36.743 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-09 18:44:36.746 +05:00 [INF] Hosting environment: Development
+2025-10-09 18:44:36.749 +05:00 [INF] Content root path: C:\Users\Abdul\source\repos\StoryBooks\StoryBooks
+2025-10-09 18:44:37.819 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.html - null null
+2025-10-09 18:44:38.263 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.html - 200 null text/html;charset=utf-8 500.3144ms
+2025-10-09 18:44:38.294 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.js - null null
+2025-10-09 18:44:38.294 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-09 18:44:38.311 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_vs/browserLink - null null
+2025-10-09 18:44:38.330 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.js - 200 null application/javascript;charset=utf-8 36.5613ms
+2025-10-09 18:44:38.375 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 81.7972ms
+2025-10-09 18:44:38.457 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 145.8914ms
+2025-10-09 18:44:38.627 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - null null
+2025-10-09 18:44:39.200 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 572.8535ms
+2025-10-09 18:49:11.170 +05:00 [INF] User profile is available. Using 'C:\Users\Abdul\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-10-09 18:49:12.694 +05:00 [INF] Executed DbCommand (51ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-10-09 18:49:12.767 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-10-09 18:49:12.841 +05:00 [INF] Executed DbCommand (7ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Fullname]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'UsersModel' AND [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-10-09 18:49:12.975 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Fullname]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'UsersModel' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-10-09 18:49:13.377 +05:00 [INF] Now listening on: https://localhost:7175
+2025-10-09 18:49:13.380 +05:00 [INF] Now listening on: http://localhost:5097
+2025-10-09 18:49:13.421 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-09 18:49:13.426 +05:00 [INF] Hosting environment: Development
+2025-10-09 18:49:13.428 +05:00 [INF] Content root path: C:\Users\Abdul\source\repos\StoryBooks\StoryBooks
+2025-10-09 18:49:14.166 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.html - null null
+2025-10-09 18:49:14.466 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.html - 200 null text/html;charset=utf-8 354.9518ms
+2025-10-09 18:49:14.509 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-09 18:49:14.509 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.js - null null
+2025-10-09 18:49:14.529 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.js - 200 null application/javascript;charset=utf-8 19.7153ms
+2025-10-09 18:49:14.532 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 23.2261ms
+2025-10-09 18:49:14.551 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_vs/browserLink - null null
+2025-10-09 18:49:14.605 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 54.1061ms
+2025-10-09 18:49:14.819 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - null null
+2025-10-09 18:49:14.856 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 40.9324ms
+2025-10-09 18:52:13.718 +05:00 [INF] User profile is available. Using 'C:\Users\Abdul\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-10-09 18:52:14.962 +05:00 [INF] Executed DbCommand (47ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-10-09 18:52:15.024 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-10-09 18:52:15.088 +05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Fullname]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'UsersModel' AND [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-10-09 18:52:15.188 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Fullname]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'UsersModel' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-10-09 18:52:15.511 +05:00 [INF] Now listening on: https://localhost:7175
+2025-10-09 18:52:15.514 +05:00 [INF] Now listening on: http://localhost:5097
+2025-10-09 18:52:15.564 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-09 18:52:15.567 +05:00 [INF] Hosting environment: Development
+2025-10-09 18:52:15.569 +05:00 [INF] Content root path: C:\Users\Abdul\source\repos\StoryBooks\StoryBooks
+2025-10-09 18:52:16.593 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.html - null null
+2025-10-09 18:52:16.865 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.html - 200 null text/html;charset=utf-8 306.864ms
+2025-10-09 18:52:16.886 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-09 18:52:16.886 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.js - null null
+2025-10-09 18:52:16.893 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_vs/browserLink - null null
+2025-10-09 18:52:16.905 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.js - 200 null application/javascript;charset=utf-8 19.942ms
+2025-10-09 18:52:16.911 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 25.2025ms
+2025-10-09 18:52:16.970 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 77.209ms
+2025-10-09 18:52:17.105 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - null null
+2025-10-09 18:52:17.170 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 65.3907ms
+2025-10-09 18:52:55.880 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=10 - null null
+2025-10-09 18:52:55.908 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Librarian|Student)
+2025-10-09 18:52:55.912 +05:00 [INF] AuthenticationScheme: Identity.Bearer was challenged.
+2025-10-09 18:52:55.919 +05:00 [INF] HTTP GET /api/StoryBook responded 401 in 23.1187 ms
+2025-10-09 18:52:55.923 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=10 - 401 0 null 44.6198ms
+2025-10-09 18:53:24.060 +05:00 [INF] User profile is available. Using 'C:\Users\Abdul\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-10-09 18:53:25.384 +05:00 [INF] Executed DbCommand (48ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-10-09 18:53:25.460 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-10-09 18:53:25.542 +05:00 [INF] Executed DbCommand (10ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Fullname]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'UsersModel' AND [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-10-09 18:53:25.662 +05:00 [INF] Executed DbCommand (9ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Fullname]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'UsersModel' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-10-09 18:53:25.986 +05:00 [INF] Now listening on: https://localhost:7175
+2025-10-09 18:53:25.988 +05:00 [INF] Now listening on: http://localhost:5097
+2025-10-09 18:53:26.042 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-09 18:53:26.046 +05:00 [INF] Hosting environment: Development
+2025-10-09 18:53:26.048 +05:00 [INF] Content root path: C:\Users\Abdul\source\repos\StoryBooks\StoryBooks
+2025-10-09 18:53:26.552 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.html - null null
+2025-10-09 18:53:26.787 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.html - 200 null text/html;charset=utf-8 261.4922ms
+2025-10-09 18:53:26.810 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-09 18:53:26.810 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.js - null null
+2025-10-09 18:53:26.821 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_vs/browserLink - null null
+2025-10-09 18:53:26.836 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.js - 200 null application/javascript;charset=utf-8 26.5263ms
+2025-10-09 18:53:26.838 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 28.6114ms
+2025-10-09 18:53:26.903 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 82.1923ms
+2025-10-09 18:53:27.005 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - null null
+2025-10-09 18:53:27.044 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 39.429ms
+2025-10-09 18:54:00.889 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=10 - null null
+2025-10-09 18:54:00.953 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 18:54:00.990 +05:00 [INF] Route matched with {action = "GetStoryBooks", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStoryBooks(Int32, Int32) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 18:54:01.085 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) - Validation state: "Valid"
+2025-10-09 18:54:01.399 +05:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [StoryBooks] AS [s]
+2025-10-09 18:54:01.420 +05:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-10-09 18:54:01.424 +05:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-10-09 18:54:01.435 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Author], [s].[BookName], [s].[Cover]
+FROM [StoryBooks] AS [s]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-10-09 18:54:01.529 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 438.0116ms.
+2025-10-09 18:54:01.541 +05:00 [INF] Executing OkObjectResult, writing value of type 'StoryBooks.Application.DTOs.PagedStoryBooksDTO'.
+2025-10-09 18:54:01.555 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) in 552.6501ms
+2025-10-09 18:54:01.561 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 18:54:01.567 +05:00 [INF] HTTP GET /api/StoryBook responded 200 in 627.2459 ms
+2025-10-09 18:54:01.575 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 686.7869ms
+2025-10-09 19:12:55.357 +05:00 [INF] User profile is available. Using 'C:\Users\Abdul\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-10-09 19:12:57.343 +05:00 [INF] Executed DbCommand (177ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-10-09 19:12:57.423 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-10-09 19:12:57.504 +05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Fullname]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'UsersModel' AND [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-10-09 19:12:57.612 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Fullname]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'UsersModel' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-10-09 19:12:57.996 +05:00 [INF] Now listening on: https://localhost:7175
+2025-10-09 19:12:58.000 +05:00 [INF] Now listening on: http://localhost:5097
+2025-10-09 19:12:58.056 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-09 19:12:58.060 +05:00 [INF] Hosting environment: Development
+2025-10-09 19:12:58.063 +05:00 [INF] Content root path: C:\Users\Abdul\source\repos\StoryBooks\StoryBooks
+2025-10-09 19:12:58.554 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.html - null null
+2025-10-09 19:12:58.889 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.html - 200 null text/html;charset=utf-8 394.5113ms
+2025-10-09 19:12:58.918 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.js - null null
+2025-10-09 19:12:58.918 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-09 19:12:58.928 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_vs/browserLink - null null
+2025-10-09 19:12:58.945 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.js - 200 null application/javascript;charset=utf-8 27.3452ms
+2025-10-09 19:12:58.971 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 53.6946ms
+2025-10-09 19:12:59.037 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 109.3782ms
+2025-10-09 19:12:59.200 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - null null
+2025-10-09 19:12:59.270 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 70.6116ms
+2025-10-09 19:14:49.635 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7175/login - application/json 133
+2025-10-09 19:14:49.654 +05:00 [INF] CORS policy execution successful.
+2025-10-09 19:14:49.666 +05:00 [INF] Executing endpoint 'HTTP: POST /login'
+2025-10-09 19:14:49.735 +05:00 [INF] Executed DbCommand (15ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Fullname]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'UsersModel' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-10-09 19:14:49.889 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2025-10-09 19:14:49.932 +05:00 [INF] Executed DbCommand (6ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-10-09 19:14:49.939 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-10-09 19:14:49.953 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-10-09 19:14:49.966 +05:00 [INF] AuthenticationScheme: Identity.Bearer signed in.
+2025-10-09 19:14:49.975 +05:00 [INF] Executed endpoint 'HTTP: POST /login'
+2025-10-09 19:14:49.982 +05:00 [INF] HTTP POST /login responded 200 in 330.9162 ms
+2025-10-09 19:14:49.990 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7175/login - 200 null application/json; charset=utf-8 355.7472ms
+2025-10-09 19:15:08.167 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=10 - null null
+2025-10-09 19:15:08.196 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 19:15:08.225 +05:00 [INF] Route matched with {action = "GetStoryBooks", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStoryBooks(Int32, Int32) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 19:15:08.290 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) - Validation state: "Valid"
+2025-10-09 19:15:08.528 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [StoryBooks] AS [s]
+2025-10-09 19:15:08.541 +05:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-10-09 19:15:08.545 +05:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-10-09 19:15:08.554 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Author], [s].[BookName], [s].[Cover]
+FROM [StoryBooks] AS [s]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-10-09 19:15:08.632 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 336.2263ms.
+2025-10-09 19:15:08.642 +05:00 [INF] Executing OkObjectResult, writing value of type 'StoryBooks.Application.DTOs.PagedStoryBooksDTO'.
+2025-10-09 19:15:08.653 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) in 418.3013ms
+2025-10-09 19:15:08.656 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 19:15:08.658 +05:00 [INF] HTTP GET /api/StoryBook responded 200 in 473.6399 ms
+2025-10-09 19:15:08.663 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 497.6761ms
+2025-10-09 19:15:09.570 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=10 - null null
+2025-10-09 19:15:09.581 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 19:15:09.584 +05:00 [INF] Route matched with {action = "GetStoryBooks", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStoryBooks(Int32, Int32) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 19:15:09.590 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) - Validation state: "Valid"
+2025-10-09 19:15:09.599 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 4.8711ms.
+2025-10-09 19:15:09.603 +05:00 [INF] Executing OkObjectResult, writing value of type 'StoryBooks.Application.DTOs.PagedStoryBooksDTO'.
+2025-10-09 19:15:09.606 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) in 18.8014ms
+2025-10-09 19:15:09.610 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 19:15:09.613 +05:00 [INF] HTTP GET /api/StoryBook responded 200 in 35.7207 ms
+2025-10-09 19:15:09.617 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 47.1919ms
+2025-10-09 19:15:10.200 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=10 - null null
+2025-10-09 19:15:10.318 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 19:15:10.326 +05:00 [INF] Route matched with {action = "GetStoryBooks", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStoryBooks(Int32, Int32) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 19:15:10.339 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) - Validation state: "Valid"
+2025-10-09 19:15:10.343 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2.2941ms.
+2025-10-09 19:15:10.348 +05:00 [INF] Executing OkObjectResult, writing value of type 'StoryBooks.Application.DTOs.PagedStoryBooksDTO'.
+2025-10-09 19:15:10.350 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) in 19.6555ms
+2025-10-09 19:15:10.354 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 19:15:10.357 +05:00 [INF] HTTP GET /api/StoryBook responded 200 in 42.0580 ms
+2025-10-09 19:15:10.364 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 164.9749ms
+2025-10-09 19:25:36.301 +05:00 [INF] User profile is available. Using 'C:\Users\Abdul\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-10-09 19:25:37.570 +05:00 [INF] Executed DbCommand (47ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-10-09 19:25:37.637 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-10-09 19:25:37.706 +05:00 [INF] Executed DbCommand (7ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Fullname]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'UsersModel' AND [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-10-09 19:25:37.805 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Fullname]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'UsersModel' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-10-09 19:25:38.110 +05:00 [INF] Now listening on: https://localhost:7175
+2025-10-09 19:25:38.113 +05:00 [INF] Now listening on: http://localhost:5097
+2025-10-09 19:25:38.153 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-09 19:25:38.157 +05:00 [INF] Hosting environment: Development
+2025-10-09 19:25:38.161 +05:00 [INF] Content root path: C:\Users\Abdul\source\repos\StoryBooks\StoryBooks
+2025-10-09 19:25:38.718 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.html - null null
+2025-10-09 19:25:38.942 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.html - 200 null text/html;charset=utf-8 263.3914ms
+2025-10-09 19:25:38.966 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-09 19:25:38.966 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.js - null null
+2025-10-09 19:25:38.976 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_vs/browserLink - null null
+2025-10-09 19:25:38.990 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.js - 200 null application/javascript;charset=utf-8 24.8845ms
+2025-10-09 19:25:38.994 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 28.3442ms
+2025-10-09 19:25:39.048 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 72.9309ms
+2025-10-09 19:25:39.145 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - null null
+2025-10-09 19:25:39.191 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 46.7245ms
+2025-10-09 19:25:57.701 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=10 - null null
+2025-10-09 19:25:57.749 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 19:25:57.780 +05:00 [INF] Route matched with {action = "GetStoryBooks", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStoryBooks(Int32, Int32) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 19:25:57.851 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) - Validation state: "Valid"
+2025-10-09 19:25:58.110 +05:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [StoryBooks] AS [s]
+2025-10-09 19:25:58.131 +05:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-10-09 19:25:58.136 +05:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-10-09 19:25:58.146 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Author], [s].[BookName], [s].[Cover]
+FROM [StoryBooks] AS [s]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-10-09 19:25:58.234 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 375.249ms.
+2025-10-09 19:25:58.247 +05:00 [INF] Executing OkObjectResult, writing value of type 'StoryBooks.Application.DTOs.PagedStoryBooksDTO'.
+2025-10-09 19:25:58.260 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) in 468.5248ms
+2025-10-09 19:25:58.265 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 19:25:58.272 +05:00 [INF] HTTP GET /api/StoryBook responded 200 in 540.7808 ms
+2025-10-09 19:25:58.286 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 586.8395ms
+2025-10-09 19:26:00.101 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=10 - null null
+2025-10-09 19:26:00.130 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 19:26:00.137 +05:00 [INF] Route matched with {action = "GetStoryBooks", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStoryBooks(Int32, Int32) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 19:26:00.145 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) - Validation state: "Valid"
+2025-10-09 19:26:00.152 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 5.2555ms.
+2025-10-09 19:26:00.156 +05:00 [INF] Executing OkObjectResult, writing value of type 'StoryBooks.Application.DTOs.PagedStoryBooksDTO'.
+2025-10-09 19:26:00.159 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) in 17.5515ms
+2025-10-09 19:26:00.162 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 19:26:00.165 +05:00 [INF] HTTP GET /api/StoryBook responded 200 in 36.2999 ms
+2025-10-09 19:26:00.170 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 69.8855ms
+2025-10-09 19:26:00.498 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=10 - null null
+2025-10-09 19:26:00.509 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 19:26:00.511 +05:00 [INF] Route matched with {action = "GetStoryBooks", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStoryBooks(Int32, Int32) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 19:26:00.523 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) - Validation state: "Valid"
+2025-10-09 19:26:00.527 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1.2673ms.
+2025-10-09 19:26:00.530 +05:00 [INF] Executing OkObjectResult, writing value of type 'StoryBooks.Application.DTOs.PagedStoryBooksDTO'.
+2025-10-09 19:26:00.533 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) in 17.8077ms
+2025-10-09 19:26:00.537 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 19:26:00.539 +05:00 [INF] HTTP GET /api/StoryBook responded 200 in 32.7611 ms
+2025-10-09 19:26:00.542 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 44.5386ms
+2025-10-09 19:26:01.008 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=10 - null null
+2025-10-09 19:26:01.021 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 19:26:01.024 +05:00 [INF] Route matched with {action = "GetStoryBooks", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStoryBooks(Int32, Int32) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 19:26:01.038 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) - Validation state: "Valid"
+2025-10-09 19:26:01.043 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1.5984ms.
+2025-10-09 19:26:01.047 +05:00 [INF] Executing OkObjectResult, writing value of type 'StoryBooks.Application.DTOs.PagedStoryBooksDTO'.
+2025-10-09 19:26:01.051 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) in 16.0568ms
+2025-10-09 19:26:01.054 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 19:26:01.056 +05:00 [INF] HTTP GET /api/StoryBook responded 200 in 35.1007 ms
+2025-10-09 19:26:01.059 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 51.2996ms
+2025-10-09 19:29:32.970 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7175/api/StoryBook?BookName=The%20Da%20Vinci%20Code&Author=Dan%20Brown - multipart/form-data; boundary=----WebKitFormBoundaryhcAq09rP4zsFoAY0 13706
+2025-10-09 19:29:32.989 +05:00 [INF] CORS policy execution successful.
+2025-10-09 19:29:32.992 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.CreateStoryBook (StoryBooks)'
+2025-10-09 19:29:33.005 +05:00 [INF] Route matched with {action = "CreateStoryBook", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[StoryBooks.Application.DTOs.StoryBookDTO]] CreateStoryBook(StoryBooks.Application.DTOs.CreateStoryBookDTO) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 19:29:33.051 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.CreateStoryBook (StoryBooks) - Validation state: "Valid"
+2025-10-09 19:29:33.089 +05:00 [INF] Executed DbCommand (8ms) [Parameters=[@__story_BookName_0='?' (Size = 4000), @__story_Author_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [StoryBooks] AS [s]
+        WHERE [s].[BookName] = @__story_BookName_0 AND [s].[Author] = @__story_Author_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-10-09 19:29:33.209 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [StoryBooks] ([Author], [BookName], [Cover])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2);
+2025-10-09 19:29:33.244 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [StoryBooks] ([Author], [BookName], [Cover])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2);
+2025-10-09 19:29:33.253 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.CreateStoryBook (StoryBooks), returned result Microsoft.AspNetCore.Mvc.CreatedAtActionResult in 197.5506ms.
+2025-10-09 19:29:33.259 +05:00 [INF] Executing CreatedAtActionResult, writing value of type 'StoryBooks.Application.DTOs.StoryBookDTO'.
+2025-10-09 19:29:33.283 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.CreateStoryBook (StoryBooks) in 274.159ms
+2025-10-09 19:29:33.288 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.CreateStoryBook (StoryBooks)'
+2025-10-09 19:29:33.290 +05:00 [INF] HTTP POST /api/StoryBook responded 201 in 302.4221 ms
+2025-10-09 19:29:33.297 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7175/api/StoryBook?BookName=The%20Da%20Vinci%20Code&Author=Dan%20Brown - 201 null application/json; charset=utf-8 329.1277ms
+2025-10-09 19:29:37.438 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7175/api/StoryBook?BookName=The%20Da%20Vinci%20Code&Author=Dan%20Brown - multipart/form-data; boundary=----WebKitFormBoundaryirbJl4ok9QR7e68x 13706
+2025-10-09 19:29:37.459 +05:00 [INF] CORS policy execution successful.
+2025-10-09 19:29:37.498 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.CreateStoryBook (StoryBooks)'
+2025-10-09 19:29:37.554 +05:00 [INF] Route matched with {action = "CreateStoryBook", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[StoryBooks.Application.DTOs.StoryBookDTO]] CreateStoryBook(StoryBooks.Application.DTOs.CreateStoryBookDTO) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 19:29:37.560 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.CreateStoryBook (StoryBooks) - Validation state: "Valid"
+2025-10-09 19:29:37.586 +05:00 [INF] Executed DbCommand (19ms) [Parameters=[@__story_BookName_0='?' (Size = 4000), @__story_Author_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [StoryBooks] AS [s]
+        WHERE [s].[BookName] = @__story_BookName_0 AND [s].[Author] = @__story_Author_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-10-09 19:29:37.591 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.CreateStoryBook (StoryBooks), returned result Microsoft.AspNetCore.Mvc.BadRequestObjectResult in 26.2571ms.
+2025-10-09 19:29:37.595 +05:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-10-09 19:29:37.599 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.CreateStoryBook (StoryBooks) in 40.331ms
+2025-10-09 19:29:37.601 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.CreateStoryBook (StoryBooks)'
+2025-10-09 19:29:37.603 +05:00 [INF] HTTP POST /api/StoryBook responded 400 in 144.2870 ms
+2025-10-09 19:29:37.607 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7175/api/StoryBook?BookName=The%20Da%20Vinci%20Code&Author=Dan%20Brown - 400 null text/plain; charset=utf-8 170.1882ms
+2025-10-09 19:29:43.790 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/StoryBook/12 - null null
+2025-10-09 19:29:43.798 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBook (StoryBooks)'
+2025-10-09 19:29:43.807 +05:00 [INF] Route matched with {action = "GetStoryBook", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[StoryBooks.Application.DTOs.StoryBookDTO]] GetStoryBook(Int32) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 19:29:43.812 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.GetStoryBook (StoryBooks) - Validation state: "Valid"
+2025-10-09 19:29:43.848 +05:00 [INF] Executed DbCommand (10ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Author], [s].[BookName], [s].[Cover]
+FROM [StoryBooks] AS [s]
+WHERE [s].[Id] = @__p_0
+2025-10-09 19:29:43.856 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.GetStoryBook (StoryBooks), returned result Microsoft.AspNetCore.Mvc.NotFoundResult in 41.76ms.
+2025-10-09 19:29:43.861 +05:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-10-09 19:29:43.876 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.GetStoryBook (StoryBooks) in 65.6175ms
+2025-10-09 19:29:43.883 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBook (StoryBooks)'
+2025-10-09 19:29:43.886 +05:00 [INF] HTTP GET /api/StoryBook/12 responded 404 in 88.2769 ms
+2025-10-09 19:29:43.890 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/StoryBook/12 - 404 null application/problem+json; charset=utf-8 99.7172ms
+2025-10-09 19:29:55.845 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=10 - null null
+2025-10-09 19:29:55.870 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 19:29:55.874 +05:00 [INF] Route matched with {action = "GetStoryBooks", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStoryBooks(Int32, Int32) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 19:29:55.883 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) - Validation state: "Valid"
+2025-10-09 19:29:55.890 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2.0572ms.
+2025-10-09 19:29:55.897 +05:00 [INF] Executing OkObjectResult, writing value of type 'StoryBooks.Application.DTOs.PagedStoryBooksDTO'.
+2025-10-09 19:29:55.901 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) in 18.9804ms
+2025-10-09 19:29:55.905 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 19:29:55.908 +05:00 [INF] HTTP GET /api/StoryBook responded 200 in 38.1131 ms
+2025-10-09 19:29:55.914 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 70.5496ms
+2025-10-09 19:30:22.239 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/StoryBook/22 - null null
+2025-10-09 19:30:22.247 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBook (StoryBooks)'
+2025-10-09 19:30:22.249 +05:00 [INF] Route matched with {action = "GetStoryBook", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[StoryBooks.Application.DTOs.StoryBookDTO]] GetStoryBook(Int32) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 19:30:22.253 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.GetStoryBook (StoryBooks) - Validation state: "Valid"
+2025-10-09 19:30:22.262 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Author], [s].[BookName], [s].[Cover]
+FROM [StoryBooks] AS [s]
+WHERE [s].[Id] = @__p_0
+2025-10-09 19:30:22.268 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.GetStoryBook (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 12.0755ms.
+2025-10-09 19:30:22.270 +05:00 [INF] Executing OkObjectResult, writing value of type 'StoryBooks.Application.DTOs.StoryBookDTO'.
+2025-10-09 19:30:22.272 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.GetStoryBook (StoryBooks) in 20.5365ms
+2025-10-09 19:30:22.275 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBook (StoryBooks)'
+2025-10-09 19:30:22.276 +05:00 [INF] HTTP GET /api/StoryBook/22 responded 200 in 29.9722 ms
+2025-10-09 19:30:22.281 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/StoryBook/22 - 200 null application/json; charset=utf-8 42.6245ms
+2025-10-09 19:30:40.559 +05:00 [INF] Request starting HTTP/2 DELETE https://localhost:7175/api/StoryBook/30 - null null
+2025-10-09 19:30:40.568 +05:00 [INF] CORS policy execution successful.
+2025-10-09 19:30:40.570 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.DeleteStoryBook (StoryBooks)'
+2025-10-09 19:30:40.576 +05:00 [INF] Route matched with {action = "DeleteStoryBook", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteStoryBook(Int32) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 19:30:40.582 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.DeleteStoryBook (StoryBooks) - Validation state: "Valid"
+2025-10-09 19:30:40.598 +05:00 [INF] Executed DbCommand (10ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Author], [s].[BookName], [s].[Cover]
+FROM [StoryBooks] AS [s]
+WHERE [s].[Id] = @__p_0
+2025-10-09 19:30:40.618 +05:00 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [StoryBooks]
+OUTPUT 1
+WHERE [Id] = @p0;
+2025-10-09 19:30:40.625 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.DeleteStoryBook (StoryBooks), returned result Microsoft.AspNetCore.Mvc.NoContentResult in 40.6951ms.
+2025-10-09 19:30:40.633 +05:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-10-09 19:30:40.635 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.DeleteStoryBook (StoryBooks) in 52.9439ms
+2025-10-09 19:30:40.637 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.DeleteStoryBook (StoryBooks)'
+2025-10-09 19:30:40.639 +05:00 [INF] HTTP DELETE /api/StoryBook/30 responded 204 in 70.2850 ms
+2025-10-09 19:30:40.642 +05:00 [INF] Request finished HTTP/2 DELETE https://localhost:7175/api/StoryBook/30 - 204 null null 82.6465ms
+2025-10-09 19:30:46.066 +05:00 [INF] Request starting HTTP/2 DELETE https://localhost:7175/api/StoryBook/31 - null null
+2025-10-09 19:30:46.071 +05:00 [INF] CORS policy execution successful.
+2025-10-09 19:30:46.072 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.DeleteStoryBook (StoryBooks)'
+2025-10-09 19:30:46.074 +05:00 [INF] Route matched with {action = "DeleteStoryBook", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteStoryBook(Int32) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 19:30:46.080 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.DeleteStoryBook (StoryBooks) - Validation state: "Valid"
+2025-10-09 19:30:46.092 +05:00 [INF] Executed DbCommand (8ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Author], [s].[BookName], [s].[Cover]
+FROM [StoryBooks] AS [s]
+WHERE [s].[Id] = @__p_0
+2025-10-09 19:30:46.101 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [StoryBooks]
+OUTPUT 1
+WHERE [Id] = @p0;
+2025-10-09 19:30:46.105 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.DeleteStoryBook (StoryBooks), returned result Microsoft.AspNetCore.Mvc.NoContentResult in 21.9598ms.
+2025-10-09 19:30:46.107 +05:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-10-09 19:30:46.108 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.DeleteStoryBook (StoryBooks) in 29.3661ms
+2025-10-09 19:30:46.111 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.DeleteStoryBook (StoryBooks)'
+2025-10-09 19:30:46.113 +05:00 [INF] HTTP DELETE /api/StoryBook/31 responded 204 in 42.8143 ms
+2025-10-09 19:30:46.116 +05:00 [INF] Request finished HTTP/2 DELETE https://localhost:7175/api/StoryBook/31 - 204 null null 50.4982ms
+2025-10-09 19:30:57.748 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=10 - null null
+2025-10-09 19:30:57.754 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 19:30:57.757 +05:00 [INF] Route matched with {action = "GetStoryBooks", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStoryBooks(Int32, Int32) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 19:30:57.763 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) - Validation state: "Valid"
+2025-10-09 19:30:57.767 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1.4419ms.
+2025-10-09 19:30:57.770 +05:00 [INF] Executing OkObjectResult, writing value of type 'StoryBooks.Application.DTOs.PagedStoryBooksDTO'.
+2025-10-09 19:30:57.773 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) in 11.8991ms
+2025-10-09 19:30:57.777 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 19:30:57.779 +05:00 [INF] HTTP GET /api/StoryBook responded 200 in 24.9491 ms
+2025-10-09 19:30:57.784 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 36.2714ms
+2025-10-09 19:31:16.173 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=10 - null null
+2025-10-09 19:31:16.180 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 19:31:16.182 +05:00 [INF] Route matched with {action = "GetStoryBooks", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStoryBooks(Int32, Int32) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 19:31:16.187 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) - Validation state: "Valid"
+2025-10-09 19:31:16.194 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [StoryBooks] AS [s]
+2025-10-09 19:31:16.201 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Author], [s].[BookName], [s].[Cover]
+FROM [StoryBooks] AS [s]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-10-09 19:31:16.207 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 18.6444ms.
+2025-10-09 19:31:16.211 +05:00 [INF] Executing OkObjectResult, writing value of type 'StoryBooks.Application.DTOs.PagedStoryBooksDTO'.
+2025-10-09 19:31:16.214 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) in 28.1814ms
+2025-10-09 19:31:16.217 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 19:31:16.219 +05:00 [INF] HTTP GET /api/StoryBook responded 200 in 39.7729 ms
+2025-10-09 19:31:16.223 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 50.4805ms
+2025-10-09 19:31:27.687 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=100 - null null
+2025-10-09 19:31:27.694 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 19:31:27.697 +05:00 [INF] Route matched with {action = "GetStoryBooks", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStoryBooks(Int32, Int32) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 19:31:27.701 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) - Validation state: "Valid"
+2025-10-09 19:31:27.708 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [StoryBooks] AS [s]
+2025-10-09 19:31:27.716 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Author], [s].[BookName], [s].[Cover]
+FROM [StoryBooks] AS [s]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-10-09 19:31:27.722 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 18.8508ms.
+2025-10-09 19:31:27.728 +05:00 [INF] Executing OkObjectResult, writing value of type 'StoryBooks.Application.DTOs.PagedStoryBooksDTO'.
+2025-10-09 19:31:27.734 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) in 33.2918ms
+2025-10-09 19:31:27.738 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 19:31:27.740 +05:00 [INF] HTTP GET /api/StoryBook responded 200 in 45.4362 ms
+2025-10-09 19:31:27.744 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=100 - 200 null application/json; charset=utf-8 57.466ms
+2025-10-09 19:31:52.148 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=100 - null null
+2025-10-09 19:31:52.155 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 19:31:52.157 +05:00 [INF] Route matched with {action = "GetStoryBooks", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStoryBooks(Int32, Int32) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 19:31:52.163 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) - Validation state: "Valid"
+2025-10-09 19:31:52.167 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1.2046ms.
+2025-10-09 19:31:52.170 +05:00 [INF] Executing OkObjectResult, writing value of type 'StoryBooks.Application.DTOs.PagedStoryBooksDTO'.
+2025-10-09 19:31:52.172 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) in 11.2319ms
+2025-10-09 19:31:52.175 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 19:31:52.179 +05:00 [INF] HTTP GET /api/StoryBook responded 200 in 24.6131 ms
+2025-10-09 19:31:52.183 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=100 - 200 null application/json; charset=utf-8 35.3495ms
+2025-10-09 19:32:02.941 +05:00 [INF] Request starting HTTP/2 DELETE https://localhost:7175/api/StoryBook/28 - null null
+2025-10-09 19:32:02.947 +05:00 [INF] CORS policy execution successful.
+2025-10-09 19:32:02.949 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.DeleteStoryBook (StoryBooks)'
+2025-10-09 19:32:02.951 +05:00 [INF] Route matched with {action = "DeleteStoryBook", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteStoryBook(Int32) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 19:32:02.957 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.DeleteStoryBook (StoryBooks) - Validation state: "Valid"
+2025-10-09 19:32:02.972 +05:00 [INF] Executed DbCommand (7ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Author], [s].[BookName], [s].[Cover]
+FROM [StoryBooks] AS [s]
+WHERE [s].[Id] = @__p_0
+2025-10-09 19:32:02.984 +05:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [StoryBooks]
+OUTPUT 1
+WHERE [Id] = @p0;
+2025-10-09 19:32:02.988 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.DeleteStoryBook (StoryBooks), returned result Microsoft.AspNetCore.Mvc.NoContentResult in 27.4722ms.
+2025-10-09 19:32:02.991 +05:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-10-09 19:32:02.994 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.DeleteStoryBook (StoryBooks) in 38.5815ms
+2025-10-09 19:32:02.997 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.DeleteStoryBook (StoryBooks)'
+2025-10-09 19:32:02.999 +05:00 [INF] HTTP DELETE /api/StoryBook/28 responded 204 in 51.9457 ms
+2025-10-09 19:32:03.002 +05:00 [INF] Request finished HTTP/2 DELETE https://localhost:7175/api/StoryBook/28 - 204 null null 61.684ms
+2025-10-09 19:32:06.144 +05:00 [INF] Request starting HTTP/2 DELETE https://localhost:7175/api/StoryBook/29 - null null
+2025-10-09 19:32:06.151 +05:00 [INF] CORS policy execution successful.
+2025-10-09 19:32:06.153 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.DeleteStoryBook (StoryBooks)'
+2025-10-09 19:32:06.155 +05:00 [INF] Route matched with {action = "DeleteStoryBook", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteStoryBook(Int32) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 19:32:06.159 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.DeleteStoryBook (StoryBooks) - Validation state: "Valid"
+2025-10-09 19:32:06.166 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Author], [s].[BookName], [s].[Cover]
+FROM [StoryBooks] AS [s]
+WHERE [s].[Id] = @__p_0
+2025-10-09 19:32:06.174 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [StoryBooks]
+OUTPUT 1
+WHERE [Id] = @p0;
+2025-10-09 19:32:06.180 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.DeleteStoryBook (StoryBooks), returned result Microsoft.AspNetCore.Mvc.NoContentResult in 16.8102ms.
+2025-10-09 19:32:06.182 +05:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-10-09 19:32:06.184 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.DeleteStoryBook (StoryBooks) in 26.2218ms
+2025-10-09 19:32:06.187 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.DeleteStoryBook (StoryBooks)'
+2025-10-09 19:32:06.188 +05:00 [INF] HTTP DELETE /api/StoryBook/29 responded 204 in 37.0989 ms
+2025-10-09 19:32:06.192 +05:00 [INF] Request finished HTTP/2 DELETE https://localhost:7175/api/StoryBook/29 - 204 null null 47.705ms
+2025-10-09 19:32:09.986 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=100 - null null
+2025-10-09 19:32:09.991 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 19:32:09.995 +05:00 [INF] Route matched with {action = "GetStoryBooks", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStoryBooks(Int32, Int32) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 19:32:10.000 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) - Validation state: "Valid"
+2025-10-09 19:32:10.003 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1.1465ms.
+2025-10-09 19:32:10.006 +05:00 [INF] Executing OkObjectResult, writing value of type 'StoryBooks.Application.DTOs.PagedStoryBooksDTO'.
+2025-10-09 19:32:10.008 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) in 8.7341ms
+2025-10-09 19:32:10.012 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 19:32:10.014 +05:00 [INF] HTTP GET /api/StoryBook responded 200 in 23.0983 ms
+2025-10-09 19:32:10.017 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=100 - 200 null application/json; charset=utf-8 32.4245ms
+2025-10-09 19:32:22.306 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=101 - null null
+2025-10-09 19:32:22.313 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 19:32:22.316 +05:00 [INF] Route matched with {action = "GetStoryBooks", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStoryBooks(Int32, Int32) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 19:32:22.320 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) - Validation state: "Valid"
+2025-10-09 19:32:22.327 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [StoryBooks] AS [s]
+2025-10-09 19:32:22.334 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Author], [s].[BookName], [s].[Cover]
+FROM [StoryBooks] AS [s]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-10-09 19:32:22.340 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 17.5866ms.
+2025-10-09 19:32:22.344 +05:00 [INF] Executing OkObjectResult, writing value of type 'StoryBooks.Application.DTOs.PagedStoryBooksDTO'.
+2025-10-09 19:32:22.349 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks) in 29.2175ms
+2025-10-09 19:32:22.356 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.GetStoryBooks (StoryBooks)'
+2025-10-09 19:32:22.360 +05:00 [INF] HTTP GET /api/StoryBook responded 200 in 46.8682 ms
+2025-10-09 19:32:22.365 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/StoryBook?pageNumber=1&pageSize=101 - 200 null application/json; charset=utf-8 58.8575ms
+2025-10-09 19:32:42.620 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/StoryBook/search?search_word=de - null null
+2025-10-09 19:32:42.630 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.StoryBookController.SearchStoryBooks (StoryBooks)'
+2025-10-09 19:32:42.635 +05:00 [INF] Route matched with {action = "SearchStoryBooks", controller = "StoryBook"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[StoryBooks.Application.DTOs.StoryBookDTO]]] SearchStoryBooks(System.String) on controller StoryBooks.Controllers.StoryBookController (StoryBooks).
+2025-10-09 19:32:42.638 +05:00 [INF] Executing action method StoryBooks.Controllers.StoryBookController.SearchStoryBooks (StoryBooks) - Validation state: "Valid"
+2025-10-09 19:32:42.665 +05:00 [INF] Executed DbCommand (6ms) [Parameters=[@__search_word_0_contains='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Author], [s].[BookName], [s].[Cover]
+FROM [StoryBooks] AS [s]
+WHERE [s].[BookName] LIKE @__search_word_0_contains ESCAPE N'\' OR [s].[Author] LIKE @__search_word_0_contains ESCAPE N'\'
+2025-10-09 19:32:42.676 +05:00 [INF] Executed action method StoryBooks.Controllers.StoryBookController.SearchStoryBooks (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 35.7735ms.
+2025-10-09 19:32:42.680 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[StoryBooks.Application.DTOs.StoryBookDTO, StoryBooks.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-09 19:32:42.682 +05:00 [INF] Executed action StoryBooks.Controllers.StoryBookController.SearchStoryBooks (StoryBooks) in 44.5277ms
+2025-10-09 19:32:42.685 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.StoryBookController.SearchStoryBooks (StoryBooks)'
+2025-10-09 19:32:42.687 +05:00 [INF] HTTP GET /api/StoryBook/search responded 200 in 57.5574 ms
+2025-10-09 19:32:42.690 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/StoryBook/search?search_word=de - 200 null application/json; charset=utf-8 69.7207ms

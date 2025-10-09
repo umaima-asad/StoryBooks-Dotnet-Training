@@ -9,7 +9,12 @@ using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using OpenTelemetry.Exporter;
+using OpenTelemetry.Metrics;
+using OpenTelemetry.Resources;
+using OpenTelemetry.Trace;
 using Serilog;
+using Serilog.Enrichers.Span;
 using StoryBooks.Application;
 using StoryBooks.Application.DTOs;
 using StoryBooks.Application.Services;
@@ -51,10 +56,38 @@ public class Program
         
         
         //Serilog
-        Log.Logger = new LoggerConfiguration().ReadFrom.Configuration(builder.Configuration).CreateLogger();
+        Log.Logger = new LoggerConfiguration()
+                    .ReadFrom.Configuration(builder.Configuration)
+                    .Enrich.FromLogContext()
+                    .Enrich.WithSpan()
+                    .WriteTo.Console()
+                    .CreateLogger();
         builder.Host.UseSerilog();
-        
-        
+
+        //openTelemetry
+        builder.Services.AddOpenTelemetry()
+                        .ConfigureResource(r => r.AddService("StoryBooks.API"))
+                        .WithMetrics(m =>
+                        {
+                             m.AddAspNetCoreInstrumentation();
+                             m.AddHttpClientInstrumentation();
+                             m.AddOtlpExporter(options =>
+                             {
+                                options.Endpoint = new Uri("http://localhost:18889");
+                             });
+                        })
+                        .WithTracing(t =>
+                        {
+                            t.AddAspNetCoreInstrumentation();
+                            t.AddHttpClientInstrumentation();
+                            t.AddEntityFrameworkCoreInstrumentation();
+                            t.AddOtlpExporter(options =>
+                            {
+                                options.Endpoint = new Uri("http://localhost:18889");
+                            });
+                        });
+
+
         //authentication
         builder.Services.AddIdentityApiEndpoints<UsersModel>()
             .AddRoles<IdentityRole>()
