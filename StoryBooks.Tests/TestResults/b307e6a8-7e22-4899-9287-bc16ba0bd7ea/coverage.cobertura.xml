@@ -620,7 +620,7 @@
               </lines>
             </method>
           </methods>
-          <lines>
+          <lines>  
             <line number="6" hits="0" branch="False" />
           </lines>
         </class>
