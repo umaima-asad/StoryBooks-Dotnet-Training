@@ -61,6 +61,16 @@ public class Program
                     .Enrich.FromLogContext()
                     .Enrich.WithSpan()
                     .WriteTo.Console()
+                    .WriteTo.OpenTelemetry(options =>
+                    {
+                        options.Endpoint = "http://localhost:18889";
+                        options.Protocol = Serilog.Sinks.OpenTelemetry.OtlpProtocol.Grpc;
+                        options.ResourceAttributes = new Dictionary<string, object>
+                        {
+                            ["service.name"] = "StoryBooks",
+                            ["deployment.environment"] = "development"
+                        };
+                    })
                     .CreateLogger();
         builder.Host.UseSerilog();
 

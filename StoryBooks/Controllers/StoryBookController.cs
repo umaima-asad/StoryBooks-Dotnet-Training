@@ -201,5 +201,20 @@ namespace StoryBooks.Controllers
             return Ok(search_results);
         }
 
+
+        [HttpGet("polly-test/{id}")]
+        public async Task<IActionResult> TestPolly(int id, [FromServices] PlaceholderService service)
+        {
+            try
+            {
+                var post = await service.GetPostAsync(id);
+                return Ok(post);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { error = ex.Message });
+            }
+        }
+
     }
 }
