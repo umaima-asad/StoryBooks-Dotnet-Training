@@ -9,6 +9,12 @@ using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using OpenTelemetry.Exporter;
+using OpenTelemetry.Metrics;
+using OpenTelemetry.Resources;
+using OpenTelemetry.Trace;
+using Serilog;
+using Serilog.Enrichers.Span;
 using StoryBooks.Application;
 using StoryBooks.Application.DTOs;
 using StoryBooks.Application.Services;
@@ -26,14 +32,11 @@ public class Program
     {
         IdentityModelEventSource.ShowPII = true;
         var builder = WebApplication.CreateBuilder(args);
-
-        // Add services to the container.
-
         builder.Services.AddControllers();
-        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-
         builder.Services.AddEndpointsApiExplorer();
-
+        
+        
+        //swagger
         builder.Services.AddSwaggerGen(c =>
         {
             c.SwaggerDoc("v1", new OpenApiInfo
@@ -50,11 +53,45 @@ public class Program
             });
             c.OperationFilter<SecurityRequirementsOperationFilter>();
         });
+        
+        
+        //Serilog
+        Log.Logger = new LoggerConfiguration()
+                    .ReadFrom.Configuration(builder.Configuration)
+                    .Enrich.FromLogContext()
+                    .Enrich.WithSpan()
+                    .WriteTo.Console()
+                    .CreateLogger();
+        builder.Host.UseSerilog();
 
+        //openTelemetry
+        builder.Services.AddOpenTelemetry()
+                        .ConfigureResource(r => r.AddService("StoryBooks.API"))
+                        .WithMetrics(m =>
+                        {
+                             m.AddAspNetCoreInstrumentation();
+                             m.AddHttpClientInstrumentation();
+                             m.AddOtlpExporter(options =>
+                             {
+                                options.Endpoint = new Uri("http://localhost:18889");
+                             });
+                        })
+                        .WithTracing(t =>
+                        {
+                            t.AddAspNetCoreInstrumentation();
+                            t.AddHttpClientInstrumentation();
+                            t.AddEntityFrameworkCoreInstrumentation();
+                            t.AddOtlpExporter(options =>
+                            {
+                                options.Endpoint = new Uri("http://localhost:18889");
+                            });
+                        });
+
+
+        //authentication
         builder.Services.AddIdentityApiEndpoints<UsersModel>()
             .AddRoles<IdentityRole>()
             .AddEntityFrameworkStores<StoryBookContext>();
-
         builder.Services.AddCors(options =>
         {
             options.AddPolicy("CORS Testing", policy =>
@@ -64,19 +101,25 @@ public class Program
                       .AllowAnyMethod();
             });
         });
-
         builder.Services.AddAuthorization(options =>
         {
             options.AddPolicy("CanEditWithoutCover", policy =>
                 policy.Requirements.Add(new CanEditNullCoverImageRequirement()));
         });
         builder.Services.AddScoped<IAuthorizationHandler, CanEditNullCoverImageHandler>();
+        
+        
+        //validation
         builder.Services.AddValidatorsFromAssembly(Assembly.Load("StoryBooks.Application"));
-
-        // Optional: for ASP.NET automatic validation integration
         builder.Services.AddFluentValidationAutoValidation();
+        
+        
+        //clean arch
         builder.Services.AddApplication();
         builder.Services.AddInfrastructure(builder.Configuration);
+        
+        
+        //middlware
         var app = builder.Build();
 
         if (app.Environment.IsDevelopment())
@@ -85,6 +128,8 @@ public class Program
             app.UseSwaggerUI();
         }
         app.MapIdentityApi<UsersModel>();
+
+        app.UseSerilogRequestLogging();
 
         app.UseHttpsRedirection();
 
