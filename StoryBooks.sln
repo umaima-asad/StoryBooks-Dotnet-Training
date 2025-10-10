@@ -6,9 +6,6 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoryBooks", "StoryBooks\StoryBooks.csproj", "{156D7D02-886B-4791-B34B-60A01D1B7487}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
-	ProjectSection(SolutionItems) = preProject
-		docker-compose.yml = docker-compose.yml
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoryBooks.Domain", "StoryBooks.Domain\StoryBooks.Domain.csproj", "{27B419B2-2F41-449D-82E5-B2E7D2E80C6C}"
 EndProject
