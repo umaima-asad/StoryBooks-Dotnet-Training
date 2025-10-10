@@ -1,13 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using StoryBooks.Application.DTOs;
 using StoryBooks.Domain.Interfaces;
 using StoryBooks.Domain.Models;
 using StoryBooks.Infrastructure.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace StoryBooks.Infrastructure.Repositories
 {

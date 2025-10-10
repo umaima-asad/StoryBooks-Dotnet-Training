@@ -3,7 +3,6 @@ using StoryBooks.Application.DTOs;
 using StoryBooks.Domain.Interfaces;
 using StoryBooks.Domain.Models;
 using StoryBooks.Application.MappingProfiles;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace StoryBooks.Application.Services
 {

@@ -1,15 +1,9 @@
 using FluentValidation;
 using FluentValidation.AspNetCore;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.Data;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Logging;
-using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using OpenTelemetry.Exporter;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
@@ -17,15 +11,13 @@ using Serilog;
 using Serilog.Enrichers.Span;
 using StoryBooks.Application;
 using StoryBooks.Application.DTOs;
-using StoryBooks.Application.Services;
 using StoryBooks.Domain.Models;
 using StoryBooks.Infrastructure;
 using StoryBooks.Infrastructure.Data;
 using StoryBooks.Requirements;
 using Swashbuckle.AspNetCore.Filters;
-using System;
 using System.Reflection;
-using System.Text;
+
 public class Program
 {
     public static async Task Main(string[] args)

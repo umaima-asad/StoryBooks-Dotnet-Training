@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using StoryBooks.Application.DTOs;
-using StoryBooks.Domain.Models;
-using System.Security.Claims;
 
 namespace StoryBooks.Requirements
 {
