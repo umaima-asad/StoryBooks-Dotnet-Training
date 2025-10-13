@@ -81,7 +81,7 @@ namespace StoryBooks.Controllers
 
         [Authorize(Roles = "Librarian")]
         [HttpPost]
-        public async Task<ActionResult<StoryBookDTO>> CreateStoryBook(CreateStoryBookDTO storyBookDto)
+        public async Task<ActionResult<StoryBookDTO>> CreateStoryBook([FromBody]CreateStoryBookDTO storyBookDto)
         {
 
             bool exists = await _service.StoryBookExistsAsync(storyBookDto);
