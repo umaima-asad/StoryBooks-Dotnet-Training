@@ -1,9 +1,9 @@
 # 📚 StoryBooks API
 
-![CI](https://github.com/<your-username>/<your-repo>/actions/workflows/ci.yml/badge.svg?branch=main)
-![Coverage](./coverage-badge.svg)
+![CI](https://github.com/umaima-asad/StoryBooks-Dotnet-Training/actions/workflows/coverage-badge.yml/badge.svg?branch=main)
+![Coverage](./coverage-report/badge_linecoverage.svg)
 
-A modular **.NET 8 Web API** project for managing storybooks with built-in **authentication, caching (Redis)**, **validation (FluentValidation)**, and **integration tests** powered by **xUnit**.  
+A modular **.NET 8 Web API** project for managing storybooks with built-in **authentication, caching (Redis)**, **validation (FluentValidation)**, **logging (Serilog with Opentelemetry)** ,and **integration tests** powered by **xUnit**.  
 
 ---
 
@@ -13,9 +13,12 @@ A modular **.NET 8 Web API** project for managing storybooks with built-in **aut
 - 📘 **CRUD for StoryBooks** with validation
 - ⚡ **Redis caching** for faster reads
 - 🧩 **FluentValidation** for DTOs
+- 🗺️ **AutoMapper** for entity to DTO or vice versa
+- ⚡ **Serilog, Opentelemetry and Aspire Dashboard** for Logs Metrics and Traces
 - 🧪 **xUnit integration tests** with coverage tracking
-- 🔐 **Role-based authorization**
+- 🔐 **Role-based and policy-based authorization**
 - ☁️ **GitHub Actions CI** with coverage badge auto-update
+- 🧹 **Clean Architecture** for scalability
 
 ---
 
@@ -29,6 +32,7 @@ A modular **.NET 8 Web API** project for managing storybooks with built-in **aut
 | **Validation** | FluentValidation |
 | **Testing** | xUnit, FluentAssertions, Moq |
 | **Caching** | Redis via StackExchange.Redis |
+| **Logging** | Serilog Opentelemetry and Aspire Dashboard |
 | **Auth** | ASP.NET Core Identity + JWT |
 | **CI/CD** | GitHub Actions |
 | **Coverage** | Coverlet + `tj-actions/coverage-badge-py` |
