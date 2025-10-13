@@ -81,7 +81,6 @@ namespace StoryBooks.Controllers
 
         [Authorize(Roles = "Librarian")]
         [HttpPost]
-        [Authorize]
         public async Task<ActionResult<StoryBookDTO>> CreateStoryBook(CreateStoryBookDTO storyBookDto)
         {
 
@@ -110,12 +109,12 @@ namespace StoryBooks.Controllers
                 imagePath = $"/images/{uniqueFileName}";
             }
 
-            var createdStoryBook = await _service.CreateStoryBookAsync(new StoryBookDTO
+            var createdStoryBook = new StoryBookDTO
             {
                 BookName = storyBookDto.BookName,
                 Author = storyBookDto.Author,
                 Cover = imagePath // <- store path in DB
-            });
+            };
 
             var created = await _service.CreateStoryBookAsync(createdStoryBook);
             return CreatedAtAction(nameof(GetStoryBook), new { id = created.BookName }, created);
