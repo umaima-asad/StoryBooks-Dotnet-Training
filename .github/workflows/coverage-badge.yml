@@ -44,9 +44,8 @@ jobs:
       - name: Generate coverage badge
         uses: tj-actions/coverage-badge-py@v2
         with:
-          input: coverage/coverage.cobertura.xml
-          output: coverage-badge.svg
-          badge-style: flat
+          working-directory: coverage
+          overwrite: true
 
       - name: Commit coverage badge
         if: github.ref == 'refs/heads/main'
