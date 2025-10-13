@@ -1,6 +1,6 @@
 # 📚 StoryBooks API
 
-![CI](https://github.com/umaima-asad/StoryBooks-Dotnet-Training/actions/workflows/ci.yml/badge.svg?branch=main)
+![CI](https://github.com/umaima-asad/StoryBooks-Dotnet-Training/actions/workflows/coverage-badge.yml/badge.svg?branch=main)
 ![Coverage](./coverage-report/badge_linecoverage.svg)
 
 A modular **.NET 8 Web API** project for managing storybooks with built-in **authentication, caching (Redis)**, **validation (FluentValidation)**, and **integration tests** powered by **xUnit**.  
