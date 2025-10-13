@@ -9,7 +9,7 @@ A modular **.NET 8 Web API** project for managing storybooks with built-in **aut
 
 ## 🚀 Features
 
-- ✅ **JWT-based authentication** (Identity + Roles)
+- ✅ **JWT-based authentication** Identity + Roles + Policies
 - 📘 **CRUD for StoryBooks** with validation
 - ⚡ **Redis caching** for faster reads
 - 🧩 **FluentValidation** for DTOs
