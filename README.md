@@ -13,10 +13,12 @@ A modular **.NET 8 Web API** project for managing storybooks with built-in **aut
 - 📘 **CRUD for StoryBooks** with validation
 - ⚡ **Redis caching** for faster reads
 - 🧩 **FluentValidation** for DTOs
+- 🗺️ **AutoMapper** for entity to DTO or vice versa
 - ⚡ **Serilog, Opentelemetry and Aspire Dashboard** for Logs Metrics and Traces
 - 🧪 **xUnit integration tests** with coverage tracking
 - 🔐 **Role-based and policy-based authorization**
 - ☁️ **GitHub Actions CI** with coverage badge auto-update
+- 🧹 **Clean Architecture** for scalability
 
 ---
 
