@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestPlatform.TestHost;
 using Moq;
-using StoryBooks.Application.Services;
+using StoryBooks.Application.Interfaces;
 using StoryBooks.Domain.Interfaces;
 using StoryBooks.Infrastructure.Data;
 

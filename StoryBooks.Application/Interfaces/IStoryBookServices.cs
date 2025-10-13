@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using StoryBooks.Application.DTOs;
 using StoryBooks.Domain.Models;
-namespace StoryBooks.Application.Services
+namespace StoryBooks.Application.Interfaces
 {
     public interface IStoryBookServices
     {

@@ -1,4 +1,4 @@
-﻿namespace StoryBooks.Application.Services
+﻿namespace StoryBooks.Application.Interfaces
 {
     public interface IRedisCacheService
     {

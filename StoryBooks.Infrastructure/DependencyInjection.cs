@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Polly;
 using Polly.Extensions.Http;
+using StoryBooks.Application.Interfaces;
 using StoryBooks.Application.Services;
 using StoryBooks.Domain.Interfaces;
 using StoryBooks.Infrastructure.Data;

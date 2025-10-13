@@ -1,8 +1,8 @@
 ﻿using FluentValidation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using StoryBooks.Application.DTOs;  
-using StoryBooks.Application.Services;
+using StoryBooks.Application.DTOs;
+using StoryBooks.Application.Interfaces;
 
 namespace StoryBooks.Controllers
 {

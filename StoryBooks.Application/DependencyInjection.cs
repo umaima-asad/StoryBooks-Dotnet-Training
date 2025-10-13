@@ -1,7 +1,9 @@
 ﻿using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using StoryBooks.Application.DTOs;
+using StoryBooks.Application.Interfaces;
 using StoryBooks.Application.Services;
+using StoryBooks.Application.Validators;
 
 namespace StoryBooks.Application
 {

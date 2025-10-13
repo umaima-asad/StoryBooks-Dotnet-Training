@@ -1,10 +1,10 @@
 ﻿using FluentValidation;
 using StoryBooks.Application.DTOs;
-namespace StoryBooks.Application.DTOs
+namespace StoryBooks.Application.Validators
 {
-    public class CreateStoryBookDTOValidator : AbstractValidator<CreateStoryBookDTO>
+    public class StoryBookDTOValidator : AbstractValidator<StoryBookDTO>
     {
-        public CreateStoryBookDTOValidator()
+        public StoryBookDTOValidator()
         {
             RuleFor(x => x.BookName)
                 .NotEmpty().WithMessage("Book name is required.")
@@ -12,6 +12,10 @@ namespace StoryBooks.Application.DTOs
             RuleFor(x => x.Author)
                 .NotEmpty().WithMessage("Author is required.")
                 .MaximumLength(100).WithMessage("Author name cannot exceed 100 characters.");
+            RuleFor(x => x.Cover)
+                .MaximumLength(500).WithMessage("Cover URL cannot exceed 500 characters.")
+                .Must(uri => string.IsNullOrEmpty(uri) || Uri.IsWellFormedUriString(uri, UriKind.Absolute))
+                .WithMessage("Cover must be a valid URL if provided.");
         }
     }
 }

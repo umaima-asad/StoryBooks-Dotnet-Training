@@ -4,6 +4,7 @@ using StoryBooks.Domain.Interfaces;
 using StoryBooks.Domain.Models;
 using StoryBooks.Application.MappingProfiles;
 using Microsoft.AspNetCore.Http;
+using StoryBooks.Application.Interfaces;
 
 namespace StoryBooks.Application.Services
 {
