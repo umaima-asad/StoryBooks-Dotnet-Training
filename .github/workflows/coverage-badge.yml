@@ -27,7 +27,7 @@ jobs:
         run: dotnet build --configuration Release --no-restore
 
       - name: Run tests with coverage
-        run: dotnet test --no-build --configuration Release /p:CollectCoverage=true /p:CoverletOutput=coverage/ /p:CoverletOutputFormat=cobertura
+        run: dotnet test --collect:"XPlat Code Coverage"
 
       - name: Generate coverage badge
         uses: tj-actions/coverage-badge-py@v2
