@@ -12,16 +12,12 @@ namespace StoryBooks.Controllers
     public class StoryBookController : ControllerBase
     {
         private readonly IStoryBookServices _service;
-        private readonly IValidator<StoryBookDTO> _validator;
-        private readonly IValidator<CreateStoryBookDTO> _createValidator;
         private readonly IAuthorizationService _authorizationService;
         private readonly IRedisCacheService _cacheService;
         public StoryBookController(IStoryBookServices service, IValidator<StoryBookDTO> validator, IValidator<CreateStoryBookDTO> createValidator,IAuthorizationService authorizationService, IRedisCacheService cacheService)
         {
 
             _service = service;
-            _validator = validator;
-            _createValidator = createValidator;
             _authorizationService = authorizationService;
             _cacheService = cacheService;
         }
@@ -86,30 +82,14 @@ namespace StoryBooks.Controllers
 
             bool exists = await _service.StoryBookExistsAsync(storyBookDto);
             if (exists)
-               return BadRequest("Book already exists");
+                return BadRequest("Book already exists");
 
-            var validationResult = await _createValidator.ValidateAsync(storyBookDto);
-            if (!validationResult.IsValid)
-                return BadRequest(validationResult.Errors);
-
-            string? imagePath = null;
+            var imagePath = string.Empty;
             if (storyBookDto.Cover != null && storyBookDto.Cover.Length > 0)
-            {
-                var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
-                if (!Directory.Exists(uploadsFolder))
-                    Directory.CreateDirectory(uploadsFolder);
-
-                var uniqueFileName = $"{Guid.NewGuid()}{Path.GetExtension(storyBookDto.Cover.FileName)}";
-                var filePath = Path.Combine(uploadsFolder, uniqueFileName);
-
-                using (var stream = new FileStream(filePath, FileMode.Create))
-                {
-                    await storyBookDto.Cover.CopyToAsync(stream);
-                }
-                imagePath = $"/images/{uniqueFileName}";
-            }
-
+                imagePath = await _service.ConvertFormFileToStringPathAsync(storyBookDto.Cover);
+                
             var createdStoryBook = new StoryBookDTO
+  
             {
                 BookName = storyBookDto.BookName,
                 Author = storyBookDto.Author,
@@ -123,32 +103,14 @@ namespace StoryBooks.Controllers
 
         [Authorize(Roles = "Librarian")]
         [HttpPut("{id}")]
-        public async Task<ActionResult<StoryBookDTO>> UpdateStoryBook(int id, CreateStoryBookDTO storyBookDto)
+        public async Task<ActionResult<StoryBookDTO>> UpdateStoryBook(int id, UpdateStoryBookDTO storyBookDto)
         {
-            var validationResult = await _createValidator.ValidateAsync(storyBookDto);
-            if (!validationResult.IsValid)
-                return BadRequest(validationResult.Errors);
 
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
-
-            string? imagePath = null;
+            var imagePath = string.Empty;
             if (storyBookDto.Cover != null && storyBookDto.Cover.Length > 0)
-            {
-                var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
-                if (!Directory.Exists(uploadsFolder))
-                    Directory.CreateDirectory(uploadsFolder);
-
-                var uniqueFileName = $"{Guid.NewGuid()}{Path.GetExtension(storyBookDto.Cover.FileName)}";
-                var filePath = Path.Combine(uploadsFolder, uniqueFileName);
-
-                using (var stream = new FileStream(filePath, FileMode.Create))
-                {
-                    await storyBookDto.Cover.CopyToAsync(stream);
-                }
-                imagePath = $"/images/{uniqueFileName}";
-
-            }
+                imagePath = await _service.ConvertFormFileToStringPathAsync(storyBookDto.Cover);
 
             var dbStorybook = await _service.GetStoryBookByIdAsync(id);
             if (dbStorybook == null)
@@ -157,14 +119,14 @@ namespace StoryBooks.Controllers
             var authResult = await _authorizationService.AuthorizeAsync(User, dbStorybook, "CanEditWithoutCover");
             if (!authResult.Succeeded)
             {
-                return Forbid(); // or return Unauthorized() if you prefer
+                return Forbid(); 
             }
 
             var storyBookToUpdate = new StoryBookDTO
             {
                 BookName = storyBookDto.BookName,
                 Author = storyBookDto.Author,
-                Cover = imagePath // <- store path in DB
+                Cover = imagePath 
             };
             var updatedStoryBook = await _service.UpdateStoryBookAsync(id, storyBookToUpdate);
             if (updatedStoryBook == null) return NotFound();

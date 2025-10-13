@@ -18,6 +18,10 @@ namespace StoryBooks.Application.MappingProfiles
 
                 // Entity → DTO
                 cfg.CreateMap<StoryBook, StoryBookDTO>().ReverseMap();
+
+                // Update → Entity 
+                cfg.CreateMap<UpdateStoryBookDTO, StoryBook>();
+
             });
 
             _mapper = config.CreateMapper();
@@ -42,6 +46,12 @@ namespace StoryBooks.Application.MappingProfiles
         public static StoryBookDTO ToDto(this StoryBook entity)
         {
             return _mapper.Map<StoryBookDTO>(entity);
+        }
+
+        // Convert Update DTO → Entity
+        public static StoryBook ToEntity(this UpdateStoryBookDTO dto)
+        {
+            return _mapper.Map<StoryBook>(dto);
         }
     }
 }

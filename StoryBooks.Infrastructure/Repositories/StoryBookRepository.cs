@@ -41,16 +41,24 @@ namespace StoryBooks.Infrastructure.Repositories
             var storyBook = await _context.StoryBooks.FindAsync(id);
             if (storyBook == null) return null;
 
+            bool modified = false;
             if (!string.IsNullOrWhiteSpace(storyBookDto.BookName))
+            {
                 storyBook.BookName = storyBookDto.BookName;
-
+                modified = true;
+            }
             if (!string.IsNullOrWhiteSpace(storyBookDto.Author))
+            {
                 storyBook.Author = storyBookDto.Author;
-
+                modified = true;
+            }
             if (!string.IsNullOrWhiteSpace(storyBookDto.Cover))
+            {
                 storyBook.Cover = storyBookDto.Cover;
-
-            await _context.SaveChangesAsync();
+                modified = true;
+            }
+            if (modified == true)
+                await _context.SaveChangesAsync();
 
             return storyBook;
         }

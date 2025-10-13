@@ -146,7 +146,7 @@ public class Program
         app.MapPost("/custom-register", async (
             UserManager<UsersModel> userManager,
             RoleManager<IdentityRole> roleManager,
-            RegisterDto request) =>
+            RegisterDTO request) =>
         {
             var user = new UsersModel
             {

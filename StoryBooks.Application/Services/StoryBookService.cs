@@ -3,6 +3,7 @@ using StoryBooks.Application.DTOs;
 using StoryBooks.Domain.Interfaces;
 using StoryBooks.Domain.Models;
 using StoryBooks.Application.MappingProfiles;
+using Microsoft.AspNetCore.Http;
 
 namespace StoryBooks.Application.Services
 {
@@ -59,6 +60,23 @@ namespace StoryBooks.Application.Services
         {
             var story = dto.ToEntity();
             return await _StoryBookcontext.StoryBookExistsAsync(story);
+        }
+        public async Task<string> ConvertFormFileToStringPathAsync(IFormFile file)
+        {
+            string? imagePath = null;
+            var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
+            if (!Directory.Exists(uploadsFolder))
+                Directory.CreateDirectory(uploadsFolder);
+
+            var uniqueFileName = $"{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
+            var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                 await file.CopyToAsync(stream);
+            }
+            imagePath = $"/images/{uniqueFileName}";
+            return imagePath;
         }
     }
 }
