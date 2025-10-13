@@ -29,11 +29,23 @@ jobs:
       - name: Run tests with coverage
         run: dotnet test --collect:"XPlat Code Coverage"
 
+      - name: Locate coverage file
+        run: |
+          mkdir -p coverage
+          found=$(find . -type f -name "coverage.cobertura.xml" | head -n 1)
+          if [ -z "$found" ]; then
+            echo "❌ No coverage file found!"
+            exit 1
+          fi
+          echo "✅ Found coverage file: $found"
+          cp "$found" coverage/coverage.cobertura.xml
+          ls -l coverage
+
       - name: Generate coverage badge
         uses: tj-actions/coverage-badge-py@v2
         with:
-          input-file: coverage/coverage.cobertura.xml
-          output-file: coverage-badge.svg
+          input: coverage/coverage.cobertura.xml
+          output: coverage-badge.svg
           badge-style: flat
 
       - name: Commit coverage badge
