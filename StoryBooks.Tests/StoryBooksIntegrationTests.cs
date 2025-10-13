@@ -37,20 +37,21 @@ namespace StoryBooks.IntegrationTests
             // Arrange
             var newBook = new CreateStoryBookDTO
             {
-                BookName = "Integration Testing 101",
-                Author = "Umaima Dev",
+                BookName = "Integration Testing 103",
+                Author = "Umaima Dev3",
                 Cover = null
             };
 
             // Act
             var response = await _client.PostAsJsonAsync("/api/StoryBook", newBook);
-
+            var problemDetails = await response.Content.ReadAsStringAsync();
+            Console.WriteLine(problemDetails);
             // Assert
             response.StatusCode.Should().Be(HttpStatusCode.Created);
 
             var createdBook = await response.Content.ReadFromJsonAsync<StoryBookDTO>();
             createdBook.Should().NotBeNull();
-            createdBook!.BookName.Should().Be("Integration Testing 101");
+            createdBook!.BookName.Should().Be("Integration Testing 103");
         }
         [Fact]
         public async Task GetStoryBooks_ShouldReturnOk()
