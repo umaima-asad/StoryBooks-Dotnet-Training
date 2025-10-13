@@ -1,10 +1,13 @@
-﻿using Xunit;
+﻿using FluentAssertions;
+using FluentValidation.TestHelper;
 using Moq;
-using FluentAssertions;
-using StoryBooks.Application.Services;
 using StoryBooks.Application.DTOs;
+using StoryBooks.Application.MappingProfiles;
+using StoryBooks.Application.Services;
+using StoryBooks.Application.Validators;
 using StoryBooks.Domain.Interfaces;
 using StoryBooks.Domain.Models;
+using Xunit;
 
 namespace StoryBooks.Tests.Services
 {
@@ -168,5 +171,33 @@ namespace StoryBooks.Tests.Services
             // Assert
             result.Should().BeTrue();
         }
+        [Fact]
+        public void CreateStoryBookDTOValidator_Should_Have_Error_When_BookName_Is_Empty()
+        {
+            //Arrange
+            var validator = new CreateStoryBookDTOValidator();
+            
+            //Act
+            var dto = new CreateStoryBookDTO { BookName = "" };
+
+            //Assert
+            var result = validator.TestValidate(dto);
+            result.ShouldHaveValidationErrorFor(x => x.BookName);
+        }
+        [Fact]
+        public void ToEntity_Should_Update_Existing_StoryBook()
+        {
+            // Arrange
+            var dto = new CreateStoryBookDTO { BookName = "Updated", Author = "Author" };
+            var entity = new StoryBook { BookName = "Old", Author = "OldAuthor" };
+
+            // Act
+            StoryBookMapper.ToEntity(dto, entity);
+
+            // Assert
+            Assert.Equal("Updated", entity.BookName);
+            Assert.Equal("Author", entity.Author);
+        }
+
     }
 }
