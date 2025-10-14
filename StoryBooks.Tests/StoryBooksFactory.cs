@@ -2,10 +2,8 @@
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.VisualStudio.TestPlatform.TestHost;
 using Moq;
 using StoryBooks.Application.Interfaces;
-using StoryBooks.Domain.Interfaces;
 using StoryBooks.Infrastructure.Data;
 
 namespace StoryBooks.IntegrationTests
@@ -16,25 +14,25 @@ namespace StoryBooks.IntegrationTests
         {
             builder.ConfigureServices(services =>
             {
-                // 1️⃣ Remove existing DB
+                // Remove existing DB
                 var descriptor = services.SingleOrDefault(
                     d => d.ServiceType == typeof(DbContextOptions<StoryBookContext>));
                 if (descriptor != null)
                     services.Remove(descriptor);
 
-                // 2️⃣ Add InMemory DB for test isolation
+                // InMemory DB 
                 services.AddDbContext<StoryBookContext>(options =>
                 {
                     options.UseInMemoryDatabase("TestDb");
                 });
 
-                // 3️⃣ Mock Redis cache so tests don’t depend on external service
+                // Mock Redis cache 
                 var mockCache = new Mock<IRedisCacheService>();
                 mockCache.Setup(c => c.GetData<object>(It.IsAny<string>())).Returns((object)null);
                 mockCache.Setup(c => c.SetData(It.IsAny<string>(), It.IsAny<object>()));
                 services.AddSingleton(mockCache.Object);
 
-                // 4️⃣ Simplify authorization for test purposes
+                // Simplify authorization 
                 services.AddSingleton<Microsoft.AspNetCore.Authorization.IAuthorizationHandler, AllowAnonymousHandler>();
             });
         }

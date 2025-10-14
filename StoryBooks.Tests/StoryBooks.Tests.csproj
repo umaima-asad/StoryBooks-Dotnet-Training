@@ -28,7 +28,7 @@
   <ItemGroup>
     <ProjectReference Include="..\StoryBooks.Domain\StoryBooks.Domain.csproj" />
     <ProjectReference Include="..\StoryBooks.Infrastructure\StoryBooks.Infrastructure.csproj" />
-    <ProjectReference Include="..\StoryBooks\StoryBooks.csproj" />
+    <ProjectReference Include="..\StoryBooks\StoryBooks.API.csproj" />
   </ItemGroup>
 
 </Project>

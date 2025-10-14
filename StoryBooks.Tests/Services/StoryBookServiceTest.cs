@@ -22,7 +22,6 @@ namespace StoryBooks.Tests.Services
             _service = new StoryBookService(_mockRepo.Object);
         }
 
-        // Helpers to create fake data
         private static StoryBook GetFakeEntity(int id = 1) => new()
         {
             Id = id,
