@@ -2,6 +2,7 @@
 {
     public class StoryBook
     {
+        public int TenantID { get; set; }
         public int Id { get; set; }
         public required string BookName { get; set; }
         public required string Author { get; set; }
