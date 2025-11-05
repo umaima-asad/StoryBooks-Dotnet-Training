@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StoryBooks.Infrastructure.Data;
 
@@ -11,9 +12,11 @@ using StoryBooks.Infrastructure.Data;
 namespace StoryBooks.Migrations
 {
     [DbContext(typeof(StoryBookContext))]
-    partial class StoryBookContextModelSnapshot : ModelSnapshot
+    [Migration("20251105085351_tenants")]
+    partial class tenants
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

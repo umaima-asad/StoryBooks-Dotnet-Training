@@ -1,4 +1,4 @@
-@StoryBooks_HostAddress = http://localhost:5097
+@StoryBooks_HostAddress = https://localhost:7175
 
 GET {{StoryBooks_HostAddress}}/weatherforecast/
 Accept: application/json
@@ -69,5 +69,11 @@ Authorization: bearer {{$bearerToken}}
 
 GET {{StoryBooks_HostAddress}}/api/storybook/{{id}}
 Authorization: bearer {{$bearerToken}}
+
+###
+
+GET {{StoryBooks_HostAddress}}/api/storybook
+Authorization: bearer {{$bearerToken}}
+X-TenantId: 1
 
 ###

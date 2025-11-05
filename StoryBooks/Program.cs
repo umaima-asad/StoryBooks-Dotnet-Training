@@ -150,6 +150,7 @@ public class Program
         {
             var user = new UsersModel
             {
+                TenantID = request.TenantID,
                 UserName = request.Email,
                 Email = request.Email,
                 Fullname = request.Fullname

@@ -18,6 +18,8 @@ namespace StoryBooks.IntegrationTests
 
             _client.DefaultRequestHeaders.Authorization =
                 new AuthenticationHeaderValue("Bearer", token);
+
+            _client.DefaultRequestHeaders.Add("X-Tenant-ID", "1");
         }
 
         [Fact]

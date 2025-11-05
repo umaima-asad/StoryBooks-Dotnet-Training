@@ -59,7 +59,6 @@ namespace StoryBooks.Infrastructure.Repositories
             }
             if (modified == true)
                 await _context.SaveChangesAsync();
-
             return storyBook;
         }
         public async Task<bool> DeleteStoryBookAsync(int id)
