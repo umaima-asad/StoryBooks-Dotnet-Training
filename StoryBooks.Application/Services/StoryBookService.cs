@@ -11,9 +11,11 @@ namespace StoryBooks.Application.Services
     public class StoryBookService : IStoryBookServices
     {
         private readonly IStoryBookRepository _StoryBookcontext;
-        public StoryBookService(IStoryBookRepository StoryBookcontext)
+        private readonly TenantProvider _tenantProvider;
+        public StoryBookService(IStoryBookRepository StoryBookcontext, TenantProvider tenantProvider)
         {
             _StoryBookcontext = StoryBookcontext;
+            _tenantProvider = tenantProvider;
         }
 
 
@@ -37,6 +39,7 @@ namespace StoryBooks.Application.Services
         public async Task<StoryBookDTO> CreateStoryBookAsync(StoryBookDTO storyBookDto)
         {
             var storyBook = storyBookDto.ToEntity();
+            storyBook.TenantID = _tenantProvider.GetTenantId();
             var createdStoryBook = await _StoryBookcontext.AddStoryBookAsync(storyBook);
             return storyBookDto;
         }

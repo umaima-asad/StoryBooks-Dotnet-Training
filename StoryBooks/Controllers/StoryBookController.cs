@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using StoryBooks.Application.DTOs;
 using StoryBooks.Application.Interfaces;
+using StoryBooks.Application.Services;
 
 namespace StoryBooks.Controllers
 {
@@ -14,12 +15,16 @@ namespace StoryBooks.Controllers
         private readonly IStoryBookServices _service;
         private readonly IAuthorizationService _authorizationService;
         private readonly IRedisCacheService _cacheService;
-        public StoryBookController(IStoryBookServices service, IValidator<StoryBookDTO> validator, IValidator<CreateStoryBookDTO> createValidator,IAuthorizationService authorizationService, IRedisCacheService cacheService)
+        private readonly TenantProvider _tenantProvider;
+        private int tenantId;
+        public StoryBookController(IStoryBookServices service, IValidator<StoryBookDTO> validator, IValidator<CreateStoryBookDTO> createValidator,IAuthorizationService authorizationService, IRedisCacheService cacheService, TenantProvider tenantProvider)
         {
 
             _service = service;
             _authorizationService = authorizationService;
             _cacheService = cacheService;
+            _tenantProvider = tenantProvider;
+            tenantId = _tenantProvider.GetTenantId();
         }
 
 
@@ -27,7 +32,7 @@ namespace StoryBooks.Controllers
         [HttpGet]
         public async Task<IActionResult> GetStoryBooks(int pageNumber = 1, int pageSize = 10)
         {
-            var cacheKey = $"StoryBooks_Page{pageNumber}_Size{pageSize}";
+            var cacheKey = $"StoryBooks_Page{pageNumber}_Size{pageSize}_Tenant{tenantId}";
             var storyBooksFromCache = _cacheService.GetData<PagedStoryBooksDTO>(cacheKey);
             if (storyBooksFromCache is not null)
             {
@@ -53,7 +58,7 @@ namespace StoryBooks.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<StoryBookDTO?>> GetStoryBook(int id)
         {
-            var cacheKey = $"StoryBook_{id}";
+            var cacheKey = $"StoryBook_{id}_Tenant{tenantId}";
             var storyBookFromCache = _cacheService.GetData<StoryBookDTO>(cacheKey);
             if (storyBookFromCache is not null)
             {

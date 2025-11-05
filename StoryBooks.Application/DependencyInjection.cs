@@ -17,6 +17,8 @@ namespace StoryBooks.Application
             services.AddScoped<IValidator<CreateStoryBookDTO>, CreateStoryBookDTOValidator>();
             services.AddScoped<IRedisCacheService, RedisCacheService>();
             services.AddAutoMapper(typeof(DependencyInjection).Assembly);
+            services.AddHttpContextAccessor();
+            services.AddScoped<TenantProvider>();
             return services;
         }
     }
