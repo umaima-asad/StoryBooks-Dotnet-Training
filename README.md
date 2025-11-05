@@ -3,7 +3,7 @@
 ![CI](https://github.com/umaima-asad/StoryBooks-Dotnet-Training/actions/workflows/coverage-badge.yml/badge.svg?branch=main)
 ![Coverage](./coverage-report/badge_linecoverage.svg)
 
-A modular **.NET 8 Web API** project for managing storybooks with built-in **authentication, caching (Redis)**, **validation (FluentValidation)**, **logging (Serilog with Opentelemetry)** ,and **integration tests** powered by **xUnit**.  
+A modular **.NET 8 Web API** project for managing storybooks with built-in **authentication, caching (Redis)**, **validation (FluentValidation)**, **logging (Serilog with Opentelemetry)** **multi-tenancy** ,and **integration tests** powered by **xUnit**.  
 
 ---
 
@@ -19,6 +19,7 @@ A modular **.NET 8 Web API** project for managing storybooks with built-in **aut
 - 🔐 **Role-based and policy-based authorization**
 - ☁️ **GitHub Actions CI** with coverage badge auto-update
 - 🧹 **Clean Architecture** for scalability
+- 🏠 **Multi Tenancy Setup** for Saas
 
 ---
 
@@ -36,6 +37,7 @@ A modular **.NET 8 Web API** project for managing storybooks with built-in **aut
 | **Auth** | ASP.NET Core Identity + JWT |
 | **CI/CD** | GitHub Actions |
 | **Coverage** | Coverlet + `tj-actions/coverage-badge-py` |
+| **Multi tenancy** | HttpContextAccess |
 
 ---
 
