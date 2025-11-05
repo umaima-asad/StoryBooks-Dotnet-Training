@@ -15,11 +15,13 @@ namespace StoryBooks.Tests.Services
     {
         private readonly Mock<IStoryBookRepository> _mockRepo;
         private readonly StoryBookService _service;
+        private readonly Mock<TenantProvider> _tenantProvider;
 
         public StoryBookServiceTests()
         {
             _mockRepo = new Mock<IStoryBookRepository>();
-            _service = new StoryBookService(_mockRepo.Object);
+            _service = new StoryBookService(_mockRepo.Object,_tenantProvider.Object);
+            _tenantProvider = new Mock<TenantProvider>();
         }
 
         // Helpers to create fake data
