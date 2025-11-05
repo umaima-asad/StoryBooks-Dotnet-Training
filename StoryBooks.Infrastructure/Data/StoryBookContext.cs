@@ -2,14 +2,15 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using StoryBooks.Application.Services;
+using StoryBooks.Domain.Interfaces;
 using StoryBooks.Domain.Models;
 
 namespace StoryBooks.Infrastructure.Data
 {
     public class StoryBookContext : IdentityDbContext<UsersModel>
     {
-        private readonly TenantProvider _tenantProvider;
-        public StoryBookContext(DbContextOptions<StoryBookContext> options, TenantProvider tenantProvider) : base(options)
+        private readonly ITenantProvider _tenantProvider;
+        public StoryBookContext(DbContextOptions<StoryBookContext> options, ITenantProvider tenantProvider) : base(options)
         {
             _tenantProvider = tenantProvider;
         }

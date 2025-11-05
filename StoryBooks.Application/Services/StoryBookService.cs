@@ -11,8 +11,8 @@ namespace StoryBooks.Application.Services
     public class StoryBookService : IStoryBookServices
     {
         private readonly IStoryBookRepository _StoryBookcontext;
-        private readonly TenantProvider _tenantProvider;
-        public StoryBookService(IStoryBookRepository StoryBookcontext, TenantProvider tenantProvider)
+        private readonly ITenantProvider _tenantProvider;
+        public StoryBookService(IStoryBookRepository StoryBookcontext, ITenantProvider tenantProvider)
         {
             _StoryBookcontext = StoryBookcontext;
             _tenantProvider = tenantProvider;

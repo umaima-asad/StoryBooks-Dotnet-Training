@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using StoryBooks.Application.DTOs;
 using StoryBooks.Application.Interfaces;
 using StoryBooks.Application.Services;
+using StoryBooks.Domain.Interfaces;
 
 namespace StoryBooks.Controllers
 {
@@ -15,9 +16,9 @@ namespace StoryBooks.Controllers
         private readonly IStoryBookServices _service;
         private readonly IAuthorizationService _authorizationService;
         private readonly IRedisCacheService _cacheService;
-        private readonly TenantProvider _tenantProvider;
+        private readonly ITenantProvider _tenantProvider;
         private int tenantId;
-        public StoryBookController(IStoryBookServices service, IValidator<StoryBookDTO> validator, IValidator<CreateStoryBookDTO> createValidator,IAuthorizationService authorizationService, IRedisCacheService cacheService, TenantProvider tenantProvider)
+        public StoryBookController(IStoryBookServices service, IValidator<StoryBookDTO> validator, IValidator<CreateStoryBookDTO> createValidator,IAuthorizationService authorizationService, IRedisCacheService cacheService, ITenantProvider tenantProvider)
         {
 
             _service = service;

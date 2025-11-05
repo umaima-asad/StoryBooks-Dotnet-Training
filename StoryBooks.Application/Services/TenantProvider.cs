@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
+using StoryBooks.Domain.Interfaces;
 
 namespace StoryBooks.Application.Services;
 
-public sealed class TenantProvider
+public sealed class TenantProvider : ITenantProvider
 {
     private const string TenantIdHeader = "X-Tenant-ID";
     private readonly IHttpContextAccessor _httpContextAccessor;
