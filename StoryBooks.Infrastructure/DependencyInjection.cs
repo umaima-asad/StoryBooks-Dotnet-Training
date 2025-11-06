@@ -8,6 +8,7 @@ using StoryBooks.Application.Services;
 using StoryBooks.Domain.Interfaces;
 using StoryBooks.Infrastructure.Data;
 using StoryBooks.Infrastructure.Repositories;
+using UserModels.Infrastructure.Repositories;
 
 
 namespace StoryBooks.Infrastructure
@@ -19,6 +20,7 @@ namespace StoryBooks.Infrastructure
             services.AddDbContext<StoryBookContext>(options =>
                 options.UseSqlServer(config.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.")));
             services.AddScoped<IStoryBookRepository, StoryBookRepository>();
+            services.AddScoped<IUsersModelRepository, UsersModelRepository>();
             services.AddStackExchangeRedisCache(options =>
             {
                 options.Configuration = config.GetConnectionString("Redis");

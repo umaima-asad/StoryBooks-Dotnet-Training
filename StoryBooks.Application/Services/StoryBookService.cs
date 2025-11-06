@@ -39,7 +39,7 @@ namespace StoryBooks.Application.Services
         public async Task<StoryBookDTO> CreateStoryBookAsync(StoryBookDTO storyBookDto)
         {
             var storyBook = storyBookDto.ToEntity();
-            storyBook.TenantID = _tenantProvider.GetTenantId();
+            storyBook.TenantID = await _tenantProvider.GetTenantId();
             var createdStoryBook = await _StoryBookcontext.AddStoryBookAsync(storyBook);
             return storyBookDto;
         }

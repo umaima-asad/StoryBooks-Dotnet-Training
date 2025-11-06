@@ -25,7 +25,6 @@ namespace StoryBooks.Controllers
             _authorizationService = authorizationService;
             _cacheService = cacheService;
             _tenantProvider = tenantProvider;
-            tenantId = _tenantProvider.GetTenantId();
         }
 
 

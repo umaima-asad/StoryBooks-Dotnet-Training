@@ -5,6 +5,7 @@ using StoryBooks.Application.DTOs;
 using StoryBooks.Application.MappingProfiles;
 using StoryBooks.Application.Services;
 using StoryBooks.Application.Validators;
+using StoryBooks.Application.Interfaces;
 using StoryBooks.Domain.Interfaces;
 using StoryBooks.Domain.Models;
 using Xunit;
@@ -22,7 +23,7 @@ namespace StoryBooks.Tests.Services
             _mockRepo = new Mock<IStoryBookRepository>();
 
             var mockTenantProvider = new Mock<ITenantProvider>();
-            mockTenantProvider.Setup(t => t.GetTenantId()).Returns(1);
+            mockTenantProvider.Setup(t => t.GetTenantId().Result).Returns(1);
 
 
             _tenantProvider = mockTenantProvider;

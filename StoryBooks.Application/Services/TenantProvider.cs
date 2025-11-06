@@ -1,31 +1,44 @@
 ﻿using Microsoft.AspNetCore.Http;
+using StoryBooks.Application.Interfaces;
 using StoryBooks.Domain.Interfaces;
 
 namespace StoryBooks.Application.Services;
 
 public sealed class TenantProvider : ITenantProvider
 {
-    private const string TenantIdHeader = "X-Tenant-ID";
     private readonly IHttpContextAccessor _httpContextAccessor;
-    public TenantProvider(IHttpContextAccessor httpContextAccessor)
+    private readonly IRedisCacheService _redisCacheService;
+    private readonly IUsersModelRepository _usersModelRepository;
+    public TenantProvider(IHttpContextAccessor httpContextAccessor, IRedisCacheService redisCacheService, IUsersModelRepository usersModelRepository)
     {
         _httpContextAccessor = httpContextAccessor;
+        _redisCacheService = redisCacheService;
+        _usersModelRepository = usersModelRepository;
     }
-    public int GetTenantId()
+    private const string UserIDClaim = "user_id";
+
+    public Guid UserID
     {
-        var context = _httpContextAccessor.HttpContext;
-        if (context == null)
-            return 0;
-
-        var tenantIdHeader = _httpContextAccessor
-                                .HttpContext?
-                                .Request
-                                .Headers[TenantIdHeader];
-
-        if (!tenantIdHeader.HasValue || !int.TryParse(tenantIdHeader.Value,out int tenantId))
+        get
         {
-            throw new ApplicationException("Tenant ID header is missing.");
+            var userIdClaim = _httpContextAccessor.HttpContext?.User?.FindFirst(UserIDClaim)?.Value;
+            if (string.IsNullOrEmpty(userIdClaim) || !Guid.TryParse(userIdClaim, out var userId))
+            {
+                throw new ApplicationException("User ID claim is missing or invalid.");
+            }
+            return userId;
         }
+    }
+    public async Task<int> GetTenantId()
+    {
+        var cacheKey = $"User_Tenant_{UserID}";
+        int TenantIdFromCache = _redisCacheService.GetData<int>(cacheKey);
+        if (TenantIdFromCache is not 0)
+        {
+            return TenantIdFromCache;
+        }
+        int tenantId = await _usersModelRepository.GetTenantIdByUserIdAsync(UserID.ToString());
+        _redisCacheService.SetData<int>(cacheKey, tenantId);
         return tenantId;
     }
 }
