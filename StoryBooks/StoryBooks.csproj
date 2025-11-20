@@ -37,6 +37,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\StoryBooks.Infrastructure\StoryBooks.Infrastructure.csproj" />
+    <ProjectReference Include="..\StoryBooks.Language\StoryBooks.Language.csproj" />
   </ItemGroup>
 
 </Project>

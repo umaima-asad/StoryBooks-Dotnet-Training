@@ -17,6 +17,7 @@ using StoryBooks.Infrastructure.Data;
 using StoryBooks.Requirements;
 using Swashbuckle.AspNetCore.Filters;
 using System.Reflection;
+using StoryBooks.Language;
 
 public class Program
 {
@@ -26,8 +27,8 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
         builder.Services.AddControllers();
         builder.Services.AddEndpointsApiExplorer();
-        
-        
+
+        var sharedResAssembly = typeof(SharedResources).Assembly;
         //swagger
         builder.Services.AddSwaggerGen(c =>
         {
@@ -44,6 +45,7 @@ public class Program
                 In = Microsoft.OpenApi.Models.ParameterLocation.Header,
             });
             c.OperationFilter<SecurityRequirementsOperationFilter>();
+            c.OperationFilter<SwaggerAcceptLanguageHeader>();
         });
         
         
@@ -119,8 +121,10 @@ public class Program
         //clean arch
         builder.Services.AddApplication();
         builder.Services.AddInfrastructure(builder.Configuration);
-        
-        
+
+        //multi languages
+        builder.Services.AddAppLocalization();
+
         //middlware
         var app = builder.Build();
 

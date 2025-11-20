@@ -1,0 +1,440 @@
+2025-11-20 12:32:57.885 +05:00 [INF] User profile is available. Using 'C:\Users\Abdul\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-20 12:32:59.871 +05:00 [INF] Executed DbCommand (103ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-11-20 12:32:59.942 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-11-20 12:33:00.061 +05:00 [INF] Executed DbCommand (11ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Int32), @__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TenantID], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[TenantID] = @__ef_filter__p_0 AND [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-11-20 12:33:00.189 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Int32), @__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TenantID], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[TenantID] = @__ef_filter__p_0 AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-20 12:33:00.670 +05:00 [INF] Now listening on: https://localhost:7175
+2025-11-20 12:33:00.675 +05:00 [INF] Now listening on: http://localhost:5097
+2025-11-20 12:33:00.739 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-20 12:33:00.742 +05:00 [INF] Hosting environment: Development
+2025-11-20 12:33:00.744 +05:00 [INF] Content root path: C:\Users\Abdul\source\repos\StoryBooks\StoryBooks
+2025-11-20 12:33:01.874 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.html - null null
+2025-11-20 12:33:02.264 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.html - 200 null text/html;charset=utf-8 456.7934ms
+2025-11-20 12:33:02.295 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-20 12:33:02.299 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_vs/browserLink - null null
+2025-11-20 12:33:02.295 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.js - null null
+2025-11-20 12:33:02.371 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 76.7413ms
+2025-11-20 12:33:02.372 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.js - 200 null application/javascript;charset=utf-8 77.5499ms
+2025-11-20 12:33:02.461 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 161.4943ms
+2025-11-20 12:33:02.645 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - null null
+2025-11-20 12:33:02.714 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 68.8714ms
+2025-11-20 12:33:17.201 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/Translations/hello - null null
+2025-11-20 12:33:17.235 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.TranslationsController.Get (StoryBooks)'
+2025-11-20 12:33:17.272 +05:00 [INF] Route matched with {action = "Get", controller = "Translations"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller StoryBooks.Controllers.TranslationsController (StoryBooks).
+2025-11-20 12:33:17.293 +05:00 [INF] Executing action method StoryBooks.Controllers.TranslationsController.Get (StoryBooks) - Validation state: "Valid"
+2025-11-20 12:33:17.309 +05:00 [INF] Executed action method StoryBooks.Controllers.TranslationsController.Get (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 6.7186ms.
+2025-11-20 12:33:17.323 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[Microsoft.Extensions.Localization.LocalizedString, Microsoft.Extensions.Localization.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]'.
+2025-11-20 12:33:17.341 +05:00 [INF] Executed action StoryBooks.Controllers.TranslationsController.Get (StoryBooks) in 55.8803ms
+2025-11-20 12:33:17.350 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.TranslationsController.Get (StoryBooks)'
+2025-11-20 12:33:17.356 +05:00 [INF] HTTP GET /api/Translations/hello responded 200 in 129.0719 ms
+2025-11-20 12:33:17.366 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/Translations/hello - 200 null application/json; charset=utf-8 166.2477ms
+2025-11-20 12:33:23.831 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/Translations/hello - null null
+2025-11-20 12:33:23.860 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.TranslationsController.Get (StoryBooks)'
+2025-11-20 12:33:23.867 +05:00 [INF] Route matched with {action = "Get", controller = "Translations"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller StoryBooks.Controllers.TranslationsController (StoryBooks).
+2025-11-20 12:33:23.874 +05:00 [INF] Executing action method StoryBooks.Controllers.TranslationsController.Get (StoryBooks) - Validation state: "Valid"
+2025-11-20 12:33:23.876 +05:00 [INF] Executed action method StoryBooks.Controllers.TranslationsController.Get (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.296ms.
+2025-11-20 12:33:23.882 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[Microsoft.Extensions.Localization.LocalizedString, Microsoft.Extensions.Localization.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]'.
+2025-11-20 12:33:23.889 +05:00 [INF] Executed action StoryBooks.Controllers.TranslationsController.Get (StoryBooks) in 16.2958ms
+2025-11-20 12:33:23.893 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.TranslationsController.Get (StoryBooks)'
+2025-11-20 12:33:23.895 +05:00 [INF] HTTP GET /api/Translations/hello responded 200 in 35.7815 ms
+2025-11-20 12:33:23.902 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/Translations/hello - 200 null application/json; charset=utf-8 71.4797ms
+2025-11-20 12:39:06.598 +05:00 [INF] User profile is available. Using 'C:\Users\Abdul\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-20 12:39:07.822 +05:00 [INF] Executed DbCommand (45ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-11-20 12:39:07.883 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-11-20 12:39:07.951 +05:00 [INF] Executed DbCommand (7ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Int32), @__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TenantID], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[TenantID] = @__ef_filter__p_0 AND [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-11-20 12:39:08.048 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Int32), @__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TenantID], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[TenantID] = @__ef_filter__p_0 AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-20 12:39:08.343 +05:00 [INF] Now listening on: https://localhost:7175
+2025-11-20 12:39:08.348 +05:00 [INF] Now listening on: http://localhost:5097
+2025-11-20 12:39:08.393 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-20 12:39:08.397 +05:00 [INF] Hosting environment: Development
+2025-11-20 12:39:08.399 +05:00 [INF] Content root path: C:\Users\Abdul\source\repos\StoryBooks\StoryBooks
+2025-11-20 12:39:09.572 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.html - null null
+2025-11-20 12:39:09.774 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.html - 200 null text/html;charset=utf-8 249.1718ms
+2025-11-20 12:39:09.809 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.js - null null
+2025-11-20 12:39:09.811 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-20 12:39:09.811 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_vs/browserLink - null null
+2025-11-20 12:39:09.834 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.js - 200 null application/javascript;charset=utf-8 25.5096ms
+2025-11-20 12:39:09.855 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 44.134ms
+2025-11-20 12:39:09.911 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 99.6252ms
+2025-11-20 12:39:10.027 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - null null
+2025-11-20 12:39:10.084 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 57.8556ms
+2025-11-20 12:39:16.627 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/Translations/hello - null null
+2025-11-20 12:39:16.652 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.TranslationsController.Get (StoryBooks)'
+2025-11-20 12:39:16.686 +05:00 [INF] Route matched with {action = "Get", controller = "Translations"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller StoryBooks.Controllers.TranslationsController (StoryBooks).
+2025-11-20 12:39:16.699 +05:00 [INF] Executing action method StoryBooks.Controllers.TranslationsController.Get (StoryBooks) - Validation state: "Valid"
+2025-11-20 12:39:16.711 +05:00 [INF] Executed action method StoryBooks.Controllers.TranslationsController.Get (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 3.0536ms.
+2025-11-20 12:39:16.727 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[Microsoft.Extensions.Localization.LocalizedString, Microsoft.Extensions.Localization.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]'.
+2025-11-20 12:39:16.743 +05:00 [INF] Executed action StoryBooks.Controllers.TranslationsController.Get (StoryBooks) in 44.4767ms
+2025-11-20 12:39:16.748 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.TranslationsController.Get (StoryBooks)'
+2025-11-20 12:39:16.752 +05:00 [INF] HTTP GET /api/Translations/hello responded 200 in 104.1141 ms
+2025-11-20 12:39:16.757 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/Translations/hello - 200 null application/json; charset=utf-8 130.1597ms
+2025-11-20 12:39:29.899 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/Translations/hello - null null
+2025-11-20 12:39:29.910 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.TranslationsController.Get (StoryBooks)'
+2025-11-20 12:39:29.915 +05:00 [INF] Route matched with {action = "Get", controller = "Translations"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller StoryBooks.Controllers.TranslationsController (StoryBooks).
+2025-11-20 12:39:29.919 +05:00 [INF] Executing action method StoryBooks.Controllers.TranslationsController.Get (StoryBooks) - Validation state: "Valid"
+2025-11-20 12:39:29.921 +05:00 [INF] Executed action method StoryBooks.Controllers.TranslationsController.Get (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.1048ms.
+2025-11-20 12:39:29.927 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[Microsoft.Extensions.Localization.LocalizedString, Microsoft.Extensions.Localization.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]'.
+2025-11-20 12:39:29.931 +05:00 [INF] Executed action StoryBooks.Controllers.TranslationsController.Get (StoryBooks) in 12.5657ms
+2025-11-20 12:39:29.935 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.TranslationsController.Get (StoryBooks)'
+2025-11-20 12:39:29.940 +05:00 [INF] HTTP GET /api/Translations/hello responded 200 in 30.3876 ms
+2025-11-20 12:39:29.946 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/Translations/hello - 200 null application/json; charset=utf-8 47.356ms
+2025-11-20 12:43:35.987 +05:00 [INF] User profile is available. Using 'C:\Users\Abdul\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-20 12:43:37.251 +05:00 [INF] Executed DbCommand (49ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-11-20 12:43:37.316 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-11-20 12:43:37.384 +05:00 [INF] Executed DbCommand (6ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Int32), @__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TenantID], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[TenantID] = @__ef_filter__p_0 AND [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-11-20 12:43:37.492 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Int32), @__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TenantID], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[TenantID] = @__ef_filter__p_0 AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-20 12:43:37.784 +05:00 [INF] Now listening on: https://localhost:7175
+2025-11-20 12:43:37.789 +05:00 [INF] Now listening on: http://localhost:5097
+2025-11-20 12:43:37.832 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-20 12:43:37.837 +05:00 [INF] Hosting environment: Development
+2025-11-20 12:43:37.840 +05:00 [INF] Content root path: C:\Users\Abdul\source\repos\StoryBooks\StoryBooks
+2025-11-20 12:43:38.645 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.html - null null
+2025-11-20 12:43:38.860 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.html - 200 null text/html;charset=utf-8 253.8308ms
+2025-11-20 12:43:38.882 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.js - null null
+2025-11-20 12:43:38.882 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-20 12:43:38.892 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_vs/browserLink - null null
+2025-11-20 12:43:38.900 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.js - 200 null application/javascript;charset=utf-8 18.797ms
+2025-11-20 12:43:38.912 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 30.1545ms
+2025-11-20 12:43:38.976 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 84.542ms
+2025-11-20 12:43:39.081 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - null null
+2025-11-20 12:43:39.126 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 46.1316ms
+2025-11-20 12:43:48.980 +05:00 [INF] User profile is available. Using 'C:\Users\Abdul\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-20 12:43:50.264 +05:00 [INF] Executed DbCommand (47ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-11-20 12:43:50.328 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-11-20 12:43:50.393 +05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Int32), @__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TenantID], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[TenantID] = @__ef_filter__p_0 AND [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-11-20 12:43:50.494 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Int32), @__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TenantID], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[TenantID] = @__ef_filter__p_0 AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-20 12:43:50.806 +05:00 [INF] Now listening on: https://localhost:7175
+2025-11-20 12:43:50.808 +05:00 [INF] Now listening on: http://localhost:5097
+2025-11-20 12:43:50.872 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-20 12:43:50.875 +05:00 [INF] Hosting environment: Development
+2025-11-20 12:43:50.877 +05:00 [INF] Content root path: C:\Users\Abdul\source\repos\StoryBooks\StoryBooks
+2025-11-20 12:43:51.226 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.html - null null
+2025-11-20 12:43:51.434 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.html - 200 null text/html;charset=utf-8 245.5819ms
+2025-11-20 12:43:51.456 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-20 12:43:51.457 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.js - null null
+2025-11-20 12:43:51.467 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_vs/browserLink - null null
+2025-11-20 12:43:51.483 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.js - 200 null application/javascript;charset=utf-8 27.3132ms
+2025-11-20 12:43:51.492 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 36.3024ms
+2025-11-20 12:43:51.558 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 91.2717ms
+2025-11-20 12:43:51.659 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - null null
+2025-11-20 12:43:51.709 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 50.828ms
+2025-11-20 12:43:57.973 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/Translations/hello - null null
+2025-11-20 12:43:57.999 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.TranslationsController.Get (StoryBooks)'
+2025-11-20 12:43:58.038 +05:00 [INF] Route matched with {action = "Get", controller = "Translations"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller StoryBooks.Controllers.TranslationsController (StoryBooks).
+2025-11-20 12:43:58.050 +05:00 [INF] Executing action method StoryBooks.Controllers.TranslationsController.Get (StoryBooks) - Validation state: "Valid"
+2025-11-20 12:43:58.062 +05:00 [INF] Executed action method StoryBooks.Controllers.TranslationsController.Get (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2.9084ms.
+2025-11-20 12:43:58.075 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[Microsoft.Extensions.Localization.LocalizedString, Microsoft.Extensions.Localization.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]'.
+2025-11-20 12:43:58.087 +05:00 [INF] Executed action StoryBooks.Controllers.TranslationsController.Get (StoryBooks) in 38.512ms
+2025-11-20 12:43:58.092 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.TranslationsController.Get (StoryBooks)'
+2025-11-20 12:43:58.096 +05:00 [INF] HTTP GET /api/Translations/hello responded 200 in 103.9381 ms
+2025-11-20 12:43:58.100 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/Translations/hello - 200 null application/json; charset=utf-8 127.9451ms
+2025-11-20 12:58:45.356 +05:00 [INF] User profile is available. Using 'C:\Users\Abdul\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-20 12:58:46.710 +05:00 [INF] Executed DbCommand (49ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-11-20 12:58:46.775 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-11-20 12:58:46.842 +05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Int32), @__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TenantID], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[TenantID] = @__ef_filter__p_0 AND [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-11-20 12:58:46.937 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Int32), @__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TenantID], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[TenantID] = @__ef_filter__p_0 AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-20 12:58:47.251 +05:00 [INF] Now listening on: https://localhost:7175
+2025-11-20 12:58:47.256 +05:00 [INF] Now listening on: http://localhost:5097
+2025-11-20 12:58:47.299 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-20 12:58:47.303 +05:00 [INF] Hosting environment: Development
+2025-11-20 12:58:47.306 +05:00 [INF] Content root path: C:\Users\Abdul\source\repos\StoryBooks\StoryBooks
+2025-11-20 12:58:48.041 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.html - null null
+2025-11-20 12:58:48.378 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.html - 200 null text/html;charset=utf-8 393.8159ms
+2025-11-20 12:58:48.393 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-20 12:58:48.393 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.js - null null
+2025-11-20 12:58:48.411 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_vs/browserLink - null null
+2025-11-20 12:58:48.418 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.js - 200 null application/javascript;charset=utf-8 24.9854ms
+2025-11-20 12:58:48.423 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 30.4785ms
+2025-11-20 12:58:48.496 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 85.5821ms
+2025-11-20 12:58:48.592 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - null null
+2025-11-20 12:58:48.633 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 42.4426ms
+2025-11-20 12:58:53.927 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/Translations/hello - null null
+2025-11-20 12:58:53.950 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.TranslationsController.Get (StoryBooks)'
+2025-11-20 12:58:53.984 +05:00 [INF] Route matched with {action = "Get", controller = "Translations"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller StoryBooks.Controllers.TranslationsController (StoryBooks).
+2025-11-20 12:58:54.000 +05:00 [INF] Executing action method StoryBooks.Controllers.TranslationsController.Get (StoryBooks) - Validation state: "Valid"
+2025-11-20 12:58:54.013 +05:00 [INF] Executed action method StoryBooks.Controllers.TranslationsController.Get (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2.7335ms.
+2025-11-20 12:58:54.030 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[Microsoft.Extensions.Localization.LocalizedString, Microsoft.Extensions.Localization.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]'.
+2025-11-20 12:58:54.047 +05:00 [INF] Executed action StoryBooks.Controllers.TranslationsController.Get (StoryBooks) in 51.8707ms
+2025-11-20 12:58:54.054 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.TranslationsController.Get (StoryBooks)'
+2025-11-20 12:58:54.059 +05:00 [INF] HTTP GET /api/Translations/hello responded 200 in 113.0508 ms
+2025-11-20 12:58:54.063 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/Translations/hello - 200 null application/json; charset=utf-8 136.8526ms
+2025-11-20 13:29:46.433 +05:00 [INF] User profile is available. Using 'C:\Users\Abdul\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-20 13:29:48.017 +05:00 [INF] Executed DbCommand (53ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-11-20 13:29:48.086 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-11-20 13:29:48.154 +05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Int32), @__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TenantID], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[TenantID] = @__ef_filter__p_0 AND [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-11-20 13:29:48.261 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Int32), @__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TenantID], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[TenantID] = @__ef_filter__p_0 AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-20 13:29:48.615 +05:00 [INF] Now listening on: https://localhost:7175
+2025-11-20 13:29:48.620 +05:00 [INF] Now listening on: http://localhost:5097
+2025-11-20 13:29:48.664 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-20 13:29:48.668 +05:00 [INF] Hosting environment: Development
+2025-11-20 13:29:48.670 +05:00 [INF] Content root path: C:\Users\Abdul\source\repos\StoryBooks\StoryBooks
+2025-11-20 13:29:49.306 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.html - null null
+2025-11-20 13:29:49.575 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.html - 200 null text/html;charset=utf-8 317.0327ms
+2025-11-20 13:29:49.602 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-20 13:29:49.602 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.js - null null
+2025-11-20 13:29:49.611 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_vs/browserLink - null null
+2025-11-20 13:29:49.634 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.js - 200 null application/javascript;charset=utf-8 32.7413ms
+2025-11-20 13:29:49.636 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 34.3504ms
+2025-11-20 13:29:49.713 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 101.7185ms
+2025-11-20 13:29:49.816 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - null null
+2025-11-20 13:29:49.868 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 52.8301ms
+2025-11-20 13:30:55.146 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/Translations/hello - null null
+2025-11-20 13:30:55.167 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.TranslationsController.Get (StoryBooks)'
+2025-11-20 13:30:55.202 +05:00 [INF] Route matched with {action = "Get", controller = "Translations"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller StoryBooks.Controllers.TranslationsController (StoryBooks).
+2025-11-20 13:30:55.218 +05:00 [INF] Executing action method StoryBooks.Controllers.TranslationsController.Get (StoryBooks) - Validation state: "Valid"
+2025-11-20 13:30:55.231 +05:00 [INF] Executed action method StoryBooks.Controllers.TranslationsController.Get (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 4.585ms.
+2025-11-20 13:30:55.243 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[Microsoft.Extensions.Localization.LocalizedString, Microsoft.Extensions.Localization.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]'.
+2025-11-20 13:30:55.257 +05:00 [INF] Executed action StoryBooks.Controllers.TranslationsController.Get (StoryBooks) in 41.8282ms
+2025-11-20 13:30:55.261 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.TranslationsController.Get (StoryBooks)'
+2025-11-20 13:30:55.265 +05:00 [INF] HTTP GET /api/Translations/hello responded 200 in 100.6139 ms
+2025-11-20 13:30:55.269 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/Translations/hello - 200 null application/json; charset=utf-8 124.1557ms
+2025-11-20 13:36:38.059 +05:00 [INF] User profile is available. Using 'C:\Users\Abdul\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-20 13:36:39.365 +05:00 [INF] Executed DbCommand (47ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-11-20 13:36:39.431 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-11-20 13:36:39.498 +05:00 [INF] Executed DbCommand (6ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Int32), @__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TenantID], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[TenantID] = @__ef_filter__p_0 AND [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-11-20 13:36:39.599 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Int32), @__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TenantID], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[TenantID] = @__ef_filter__p_0 AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-20 13:36:39.895 +05:00 [INF] Now listening on: https://localhost:7175
+2025-11-20 13:36:39.900 +05:00 [INF] Now listening on: http://localhost:5097
+2025-11-20 13:36:39.940 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-20 13:36:39.945 +05:00 [INF] Hosting environment: Development
+2025-11-20 13:36:39.949 +05:00 [INF] Content root path: C:\Users\Abdul\source\repos\StoryBooks\StoryBooks
+2025-11-20 13:36:40.639 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.html - null null
+2025-11-20 13:36:40.861 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.html - 200 null text/html;charset=utf-8 275.8808ms
+2025-11-20 13:36:40.892 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.js - null null
+2025-11-20 13:36:40.892 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-20 13:36:40.894 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_vs/browserLink - null null
+2025-11-20 13:36:40.922 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.js - 200 null application/javascript;charset=utf-8 30.4026ms
+2025-11-20 13:36:40.974 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 82.3733ms
+2025-11-20 13:36:41.014 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 120.5203ms
+2025-11-20 13:36:41.115 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - null null
+2025-11-20 13:36:41.157 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 42.8186ms
+2025-11-20 13:36:58.550 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/Translations/hello - null null
+2025-11-20 13:36:58.573 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.TranslationsController.Get (StoryBooks)'
+2025-11-20 13:36:58.591 +05:00 [INF] Route matched with {action = "Get", controller = "Translations"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller StoryBooks.Controllers.TranslationsController (StoryBooks).
+2025-11-20 13:36:58.605 +05:00 [INF] Executing action method StoryBooks.Controllers.TranslationsController.Get (StoryBooks) - Validation state: "Valid"
+2025-11-20 13:36:58.612 +05:00 [INF] Executed action method StoryBooks.Controllers.TranslationsController.Get (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2.3786ms.
+2025-11-20 13:36:58.626 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[Microsoft.Extensions.Localization.LocalizedString, Microsoft.Extensions.Localization.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]'.
+2025-11-20 13:36:58.641 +05:00 [INF] Executed action StoryBooks.Controllers.TranslationsController.Get (StoryBooks) in 43.5431ms
+2025-11-20 13:36:58.646 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.TranslationsController.Get (StoryBooks)'
+2025-11-20 13:36:58.653 +05:00 [INF] HTTP GET /api/Translations/hello responded 200 in 84.3827 ms
+2025-11-20 13:36:58.658 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/Translations/hello - 200 null application/json; charset=utf-8 108.9571ms
+2025-11-20 13:40:33.661 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/Translations/hello - null null
+2025-11-20 13:40:33.673 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.TranslationsController.Get (StoryBooks)'
+2025-11-20 13:40:33.683 +05:00 [INF] Route matched with {action = "Get", controller = "Translations"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller StoryBooks.Controllers.TranslationsController (StoryBooks).
+2025-11-20 13:40:33.689 +05:00 [INF] Executing action method StoryBooks.Controllers.TranslationsController.Get (StoryBooks) - Validation state: "Valid"
+2025-11-20 13:40:43.440 +05:00 [INF] Executed action method StoryBooks.Controllers.TranslationsController.Get (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 9747.9085ms.
+2025-11-20 13:40:43.447 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[Microsoft.Extensions.Localization.LocalizedString, Microsoft.Extensions.Localization.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]'.
+2025-11-20 13:40:43.471 +05:00 [INF] Executed action StoryBooks.Controllers.TranslationsController.Get (StoryBooks) in 9783.1267ms
+2025-11-20 13:40:43.477 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.TranslationsController.Get (StoryBooks)'
+2025-11-20 13:40:43.479 +05:00 [INF] HTTP GET /api/Translations/hello responded 200 in 9807.0841 ms
+2025-11-20 13:40:43.483 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/Translations/hello - 200 null application/json; charset=utf-8 9822.9918ms
+2025-11-20 13:41:08.647 +05:00 [INF] User profile is available. Using 'C:\Users\Abdul\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-20 13:41:10.008 +05:00 [INF] Executed DbCommand (47ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-11-20 13:41:10.088 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-11-20 13:41:10.179 +05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Int32), @__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TenantID], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[TenantID] = @__ef_filter__p_0 AND [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-11-20 13:41:10.295 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Int32), @__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TenantID], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[TenantID] = @__ef_filter__p_0 AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-20 13:41:10.670 +05:00 [INF] Now listening on: https://localhost:7175
+2025-11-20 13:41:10.674 +05:00 [INF] Now listening on: http://localhost:5097
+2025-11-20 13:41:10.714 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-20 13:41:10.719 +05:00 [INF] Hosting environment: Development
+2025-11-20 13:41:10.723 +05:00 [INF] Content root path: C:\Users\Abdul\source\repos\StoryBooks\StoryBooks
+2025-11-20 13:41:11.626 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.html - null null
+2025-11-20 13:41:11.816 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.html - 200 null text/html;charset=utf-8 236.8327ms
+2025-11-20 13:41:11.834 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-20 13:41:11.834 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.js - null null
+2025-11-20 13:41:11.852 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_vs/browserLink - null null
+2025-11-20 13:41:11.856 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.js - 200 null application/javascript;charset=utf-8 20.7829ms
+2025-11-20 13:41:11.863 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 28.3511ms
+2025-11-20 13:41:11.933 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 81.3233ms
+2025-11-20 13:41:12.034 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - null null
+2025-11-20 13:41:12.075 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 41.5529ms
+2025-11-20 13:41:21.882 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/Translations/hello - null null
+2025-11-20 13:41:21.907 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.TranslationsController.Get (StoryBooks)'
+2025-11-20 13:41:21.925 +05:00 [INF] Route matched with {action = "Get", controller = "Translations"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller StoryBooks.Controllers.TranslationsController (StoryBooks).
+2025-11-20 13:41:21.940 +05:00 [INF] Executing action method StoryBooks.Controllers.TranslationsController.Get (StoryBooks) - Validation state: "Valid"
+2025-11-20 13:41:47.048 +05:00 [INF] Executed action method StoryBooks.Controllers.TranslationsController.Get (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 25097.6888ms.
+2025-11-20 13:41:47.061 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[Microsoft.Extensions.Localization.LocalizedString, Microsoft.Extensions.Localization.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]'.
+2025-11-20 13:41:47.091 +05:00 [INF] Executed action StoryBooks.Controllers.TranslationsController.Get (StoryBooks) in 25155.0236ms
+2025-11-20 13:41:47.098 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.TranslationsController.Get (StoryBooks)'
+2025-11-20 13:41:47.103 +05:00 [INF] HTTP GET /api/Translations/hello responded 200 in 25199.8451 ms
+2025-11-20 13:41:47.106 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/Translations/hello - 200 null application/json; charset=utf-8 25224.0543ms
+2025-11-20 13:46:42.415 +05:00 [INF] User profile is available. Using 'C:\Users\Abdul\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-20 13:46:43.795 +05:00 [INF] Executed DbCommand (54ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-11-20 13:46:43.860 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-11-20 13:46:43.935 +05:00 [INF] Executed DbCommand (6ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Int32), @__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TenantID], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[TenantID] = @__ef_filter__p_0 AND [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-11-20 13:46:44.050 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Int32), @__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TenantID], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[TenantID] = @__ef_filter__p_0 AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-20 13:46:44.351 +05:00 [INF] Now listening on: https://localhost:7175
+2025-11-20 13:46:44.356 +05:00 [INF] Now listening on: http://localhost:5097
+2025-11-20 13:46:44.446 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-20 13:46:44.451 +05:00 [INF] Hosting environment: Development
+2025-11-20 13:46:44.453 +05:00 [INF] Content root path: C:\Users\Abdul\source\repos\StoryBooks\StoryBooks
+2025-11-20 13:46:45.049 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.html - null null
+2025-11-20 13:46:45.278 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.html - 200 null text/html;charset=utf-8 272.9397ms
+2025-11-20 13:46:45.298 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.js - null null
+2025-11-20 13:46:45.298 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-20 13:46:45.311 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_vs/browserLink - null null
+2025-11-20 13:46:45.316 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.js - 200 null application/javascript;charset=utf-8 17.9591ms
+2025-11-20 13:46:45.337 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 39.0881ms
+2025-11-20 13:46:45.400 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 89.7774ms
+2025-11-20 13:46:45.512 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - null null
+2025-11-20 13:46:45.556 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 44.7205ms
+2025-11-20 13:47:00.175 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/Translations/hello - null null
+2025-11-20 13:47:00.200 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.TranslationsController.Get (StoryBooks)'
+2025-11-20 13:47:00.224 +05:00 [INF] Route matched with {action = "Get", controller = "Translations"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller StoryBooks.Controllers.TranslationsController (StoryBooks).
+2025-11-20 13:47:00.236 +05:00 [INF] Executing action method StoryBooks.Controllers.TranslationsController.Get (StoryBooks) - Validation state: "Valid"
+2025-11-20 13:47:09.674 +05:00 [INF] Executed action method StoryBooks.Controllers.TranslationsController.Get (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 9429.0878ms.
+2025-11-20 13:47:09.685 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[Microsoft.Extensions.Localization.LocalizedString, Microsoft.Extensions.Localization.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]'.
+2025-11-20 13:47:09.722 +05:00 [INF] Executed action StoryBooks.Controllers.TranslationsController.Get (StoryBooks) in 9489.6832ms
+2025-11-20 13:47:09.729 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.TranslationsController.Get (StoryBooks)'
+2025-11-20 13:47:09.734 +05:00 [INF] HTTP GET /api/Translations/hello responded 200 in 9538.6858 ms
+2025-11-20 13:47:09.737 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/Translations/hello - 200 null application/json; charset=utf-8 9562.4031ms
+2025-11-20 14:03:18.370 +05:00 [INF] User profile is available. Using 'C:\Users\Abdul\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-20 14:03:19.756 +05:00 [INF] Executed DbCommand (50ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-11-20 14:03:19.828 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-11-20 14:03:19.898 +05:00 [INF] Executed DbCommand (6ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Int32), @__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TenantID], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[TenantID] = @__ef_filter__p_0 AND [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-11-20 14:03:20.001 +05:00 [INF] Executed DbCommand (7ms) [Parameters=[@__ef_filter__p_0='?' (DbType = Int32), @__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TenantID], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[TenantID] = @__ef_filter__p_0 AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-20 14:03:20.342 +05:00 [INF] Now listening on: https://localhost:7175
+2025-11-20 14:03:20.346 +05:00 [INF] Now listening on: http://localhost:5097
+2025-11-20 14:03:20.391 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-20 14:03:20.395 +05:00 [INF] Hosting environment: Development
+2025-11-20 14:03:20.397 +05:00 [INF] Content root path: C:\Users\Abdul\source\repos\StoryBooks\StoryBooks
+2025-11-20 14:03:21.417 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.html - null null
+2025-11-20 14:03:21.604 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.html - 200 null text/html;charset=utf-8 230.6364ms
+2025-11-20 14:03:21.626 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-20 14:03:21.626 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/index.js - null null
+2025-11-20 14:03:21.645 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/_vs/browserLink - null null
+2025-11-20 14:03:21.652 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/index.js - 200 null application/javascript;charset=utf-8 26.6763ms
+2025-11-20 14:03:21.654 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 28.8391ms
+2025-11-20 14:03:21.724 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/_vs/browserLink - 200 null text/javascript; charset=UTF-8 79.0693ms
+2025-11-20 14:03:21.824 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - null null
+2025-11-20 14:03:21.868 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 45.9292ms
+2025-11-20 14:03:26.548 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7175/api/Translations/hello - null null
+2025-11-20 14:03:26.576 +05:00 [INF] Executing endpoint 'StoryBooks.Controllers.TranslationsController.Get (StoryBooks)'
+2025-11-20 14:03:26.599 +05:00 [INF] Route matched with {action = "Get", controller = "Translations"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller StoryBooks.Controllers.TranslationsController (StoryBooks).
+2025-11-20 14:03:26.614 +05:00 [INF] Executing action method StoryBooks.Controllers.TranslationsController.Get (StoryBooks) - Validation state: "Valid"
+2025-11-20 14:03:29.947 +05:00 [INF] Executed action method StoryBooks.Controllers.TranslationsController.Get (StoryBooks), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 3327.8253ms.
+2025-11-20 14:03:29.959 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[Microsoft.Extensions.Localization.LocalizedString, Microsoft.Extensions.Localization.Abstractions, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]'.
+2025-11-20 14:03:29.991 +05:00 [INF] Executed action StoryBooks.Controllers.TranslationsController.Get (StoryBooks) in 3381.6051ms
+2025-11-20 14:03:29.998 +05:00 [INF] Executed endpoint 'StoryBooks.Controllers.TranslationsController.Get (StoryBooks)'
+2025-11-20 14:03:30.005 +05:00 [INF] HTTP GET /api/Translations/hello responded 200 in 3435.7045 ms
+2025-11-20 14:03:30.013 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7175/api/Translations/hello - 200 null application/json; charset=utf-8 3465.8672ms
