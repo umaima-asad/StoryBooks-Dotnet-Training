@@ -18,7 +18,10 @@ namespace StoryBooks.Controllers
         [HttpGet("hello")]
         public IActionResult Get()
         {
-            return Ok(new { message = _localizer["Hello"] });
+            var strings = _localizer.GetAllStrings()
+                        .ToDictionary(ls => ls.Name, ls => ls.Value);
+
+            return Ok(new { resources = strings });
         }
     }
 }

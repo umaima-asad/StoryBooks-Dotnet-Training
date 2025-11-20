@@ -11,7 +11,7 @@ public class SwaggerAcceptLanguageHeader : IOperationFilter
         {
             Name = "Accept-Language",
             In = ParameterLocation.Header,
-            Description = "Choose UI language (en, fr, ar)",
+            Description = "Choose UI language (en, fr, es, ar)",
             Required = false,
             Schema = new OpenApiSchema
             {

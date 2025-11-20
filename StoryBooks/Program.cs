@@ -2,6 +2,7 @@ using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Logging;
 using Microsoft.OpenApi.Models;
 using OpenTelemetry.Metrics;
@@ -14,10 +15,10 @@ using StoryBooks.Application.DTOs;
 using StoryBooks.Domain.Models;
 using StoryBooks.Infrastructure;
 using StoryBooks.Infrastructure.Data;
+using StoryBooks.Language;
 using StoryBooks.Requirements;
 using Swashbuckle.AspNetCore.Filters;
 using System.Reflection;
-using StoryBooks.Language;
 
 public class Program
 {
@@ -28,7 +29,6 @@ public class Program
         builder.Services.AddControllers();
         builder.Services.AddEndpointsApiExplorer();
 
-        var sharedResAssembly = typeof(SharedResources).Assembly;
         //swagger
         builder.Services.AddSwaggerGen(c =>
         {
@@ -127,6 +127,8 @@ public class Program
 
         //middlware
         var app = builder.Build();
+        var locOptions = app.Services.GetRequiredService<IOptions<RequestLocalizationOptions>>();
+        app.UseRequestLocalization(locOptions.Value);
 
         if (app.Environment.IsDevelopment())
         {
